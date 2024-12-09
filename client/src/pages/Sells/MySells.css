@@ -1,49 +1,116 @@
 /* Container for shop details */
 .shop-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items at the top */
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1400px;
-    margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1500px;
+  margin: 20px auto;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Text content section */
+.shop-details .text-content {
+  flex: 1;
+  margin-right: 20px; /* Add space between text and button */
+}
+
+.shop-details h2 {
+  font-size: 2rem; /* Increase font size for shop name */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.shop-details p {
+  font-size: 1.1rem; /* Increase font size for description */
+  margin-bottom: 10px;
+  color: #6e6e6e;
+}
+
+.shop-details strong {
+  font-weight: 400;
+}
+
+/* Button styling */
+.shop-details button {
+  background-color: #59646f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.shop-details button:hover {
+  background-color: #2f3133;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .shop-details {
+    padding: 20px;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align items */
   }
-  
-  /* Text content section */
+
   .shop-details .text-content {
-    flex: 1;
+    margin-right: 0; /* Remove margin for stacked layout */
+    text-align: center; /* Center align text */
   }
-  
+
   .shop-details h2 {
-    font-size: 2rem; /* Increase font size for shop name */
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
   }
-  
+
   .shop-details p {
-    font-size: 1.2rem; /* Increase font size for description */
-    margin-bottom: 10px;
+    font-size: 1rem; /* Adjust font size for readability */
   }
-  
-  .shop-details strong {
-    font-weight: 400;
-  }
-  
-  /* Button styling */
+
   .shop-details button {
-    background-color: #59646f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    padding: 8px 16px; /* Adjust button size */
+    margin-top: 20px; /* Add space between text and button */
   }
-  
-  .shop-details button:hover {
-    background-color: #2f3133;
+}
+
+@media (max-width: 768px) {
+  .shop-details {
+    padding: 15px;
   }
-  
+
+  .shop-details h2 {
+    font-size: 1.6rem;
+  }
+
+  .shop-details p {
+    font-size: 0.95rem;
+  }
+
+  .shop-details button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-details {
+    padding: 10px;
+  }
+
+  .shop-details h2 {
+    font-size: 1.4rem;
+  }
+
+  .shop-details p {
+    font-size: 0.9rem;
+  }
+
+  .shop-details button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

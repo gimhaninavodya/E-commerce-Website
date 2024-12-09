@@ -33,3 +33,18 @@ export const getAllItems = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const getUserItems = async (req, res) => {
+  const { userId } = req.params;
+
+  if (!userId) {
+    return res.status(400).json({ success: false, message: "User ID is required." });
+  }
+
+  try {
+    const items = await Item.find({ seller: userId });
+    res.status(200).json(items);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

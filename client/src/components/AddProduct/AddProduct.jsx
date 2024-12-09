@@ -9,8 +9,8 @@ const AddProduct = () => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    price: 0,
-    stock: 0,
+    price: '',
+    stock: '',
     seller: '',
     images: [],
   });

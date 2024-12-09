@@ -47,11 +47,11 @@ const ProductList = () => {
 
   return (
     <div>
-      <h3 style={{ textAlign: "left", marginTop: "50px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>Popular Items</h3>
+      <h3 style={{ textAlign: "left", marginTop: "30px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>Popular Items</h3>
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {products.map((product) => (
+        {products.slice(0,4).map((product) => (
           <ProductCard
             key={product._id}
             product={product}
