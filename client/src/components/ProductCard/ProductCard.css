@@ -1,0 +1,144 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin: 30px;
+  padding: 16px;
+  max-width: 320px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.details h2 {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Ensures left and right are spaced apart */
+  align-items: flex-start; /* Aligns items at the top */
+  flex-wrap: wrap; /* Allows items to wrap if the screen is too small */
+}
+
+.row > div {
+  flex: 1;
+}
+
+.right {
+  text-align: right; /* Aligns the price to the right within its div */
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2d3748;
+  text-align: end;
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ff6b6b;
+  display: flex;
+  align-items: center;
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e5e5e5;
+  color: rgb(86, 86, 86);
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #f8f8f9;
+}
+
+/* Responsive Styles */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Make card full width on small screens */
+    margin: 20px; /* Center the card */
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  .image {
+    height: auto;
+    width: auto; /* Adjust image height for smaller screens */
+  }
+
+  .details h2 {
+    font-size: 18px; /* Reduce font size of product name */
+  }
+
+  .description {
+    font-size: 12px; /* Smaller font for description */
+  }
+
+  .row {
+    flex-direction: column; /* Stack name/description and price on top of each other */
+    align-items: flex-start; /* Align left */
+  }
+
+  .right {
+    text-align: left; /* Price moves left when stacked */
+    margin-top: 10px; /* Add space between price and description */
+  }
+
+  .price {
+    font-size: 14px; /* Smaller price font for smaller screens */
+  }
+
+  .addButton {
+    width: 100%; /* Make the add to cart button full width on small screens */
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .image {
+    height: auto;
+    width: auto; /* Adjust image height for smaller screens */
+  }
+
+  .details h2 {
+    font-size: 16px; /* Further reduce product name font size */
+  }
+
+  .price {
+    font-size: 14px; /* Further reduce price font size */
+  }
+
+  .description {
+    font-size: 12px; /* Even smaller description font size */
+  }
+}

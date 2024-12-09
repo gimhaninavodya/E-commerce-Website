@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  
+  font-family: "Poppins", sans-serif;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh
+}
+.form{
+  margin: auto;
+  padding: 15px;
+  width: 500px;
+}
+.form-container {
+  width: 1000px;
+  background: white;
+}
+.title {
+  text-align: center;
+}
+.btn.custom-btn {
+  background-color: #ffffff; /* Light gray or any color you prefer */
+  border: 1px solid #d7d7d7; /* Matching border color */
+  color: #000; /* Black text */
+  font-weight: 400;
+}
+
+.btn.custom-btn:hover {
+  background-color: #e6e6e6; /* Slightly darker gray on hover */
+  border-color: #bfbfbf; /* Border color on hover */
+  color: #000; /* Ensure text stays black */
+}
+
+.btn.custom-btn:active,
+.btn.custom-btn:focus {
+  background-color: #d9d9d9; /* Pressed state */
+  border-color: #bfbfbf;
+  color: #000;
+}
+
+.btn.custom-btn.ant-btn-loading {
+  background-color: #f0f0f0; /* Ensure consistent background during loading */
+  border-color: #d9d9d9;
+}
+
+.auth-image {
+  width: 100%;
+  border-radius: 10px;
+}
+.alert {
+  margin-bottom: 1.5rem;
+}
+.profile-card {
+  width: 500px;
+}
+.avatar {
+  margin-bottom: 1.5rem;
+}
+.username {
+  text-transform: capitalize;
+}
+.profile-btn {
+  margin-top: 1.3rem;
+  width: 100%;
+}

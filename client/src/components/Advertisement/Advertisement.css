@@ -1,0 +1,29 @@
+.ads-slider {
+    height: auto; /* Adjust height dynamically */
+    background-color: #ffffff;
+    padding-top: 10px; 
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden; /* Hide any overflow from images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ads-content {
+    position: relative;
+    width: 100%; /* Ensure content stretches fully */
+    display: flex;
+    justify-content: center; /* Center-align images */
+  }
+  
+  .ad-image {
+    width: 100%; /* Full width of parent container */
+    max-height: 400px; /* Optional: Set a max height for large images */
+    object-fit: cover; /* Scale and crop image proportionally */
+    border-radius: 20px;
+  }
+  

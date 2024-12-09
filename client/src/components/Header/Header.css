@@ -1,0 +1,169 @@
+/* General Wrapper */
+.h-wrapper {
+    width: 100%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Container */
+.h-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Logo */
+.h-logo h1 {
+    font-size: 1.8rem; /* Increased for a bigger logo */
+    color: #333;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+/* Navigation */
+.h-nav {
+    /* margin-left: auto; */
+    padding-top: 10px;
+    position: relative; /* To position the dropdown menu */
+}
+
+.h-nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 20;
+    align-items: center;
+}
+
+/* Navigation Links */
+.h-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-right: 20px;
+}
+
+.h-nav ul li a:hover {
+    color: #818384;
+}
+
+/* Icons */
+.h-icons {
+    display: flex;
+    font-size: 1.5rem;
+    gap: 20px;
+}
+
+.h-nav a, .h-signin-btn {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.h-nav a:hover, .h-signin-btn:hover {
+    color: #423707;
+}
+
+/* Sign-in Button */
+.h-signin-btn {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 25ch;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.h-signin-btn:hover {
+    background-color: #e6e6e6;
+}
+
+/* Menu Button (Hamburger Icon) */
+.menu-btn {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Dropdown Navigation */
+.h-nav.open ul {
+    display: block;
+}
+
+.h-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* Responsive Styles */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .h-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .h-logo h1 {
+        font-size: 1.5rem;
+        padding-left: 0;
+    }
+
+    .h-nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .h-nav.open ul {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .h-nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .h-icons {
+        font-size: 1.3rem;
+        gap: 15px;
+    }
+
+    .h-signin-btn {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+    .h-logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .h-nav ul li a {
+        font-size: 1rem;
+    }
+
+    .h-icons {
+        font-size: 1.2rem;
+    }
+
+    .h-signin-btn {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,49 @@
+/* Container for shop details */
+.shop-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1400px;
+    margin: 20px auto;
+  }
+  
+  /* Text content section */
+  .shop-details .text-content {
+    flex: 1;
+  }
+  
+  .shop-details h2 {
+    font-size: 2rem; /* Increase font size for shop name */
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .shop-details p {
+    font-size: 1.2rem; /* Increase font size for description */
+    margin-bottom: 10px;
+  }
+  
+  .shop-details strong {
+    font-weight: 400;
+  }
+  
+  /* Button styling */
+  .shop-details button {
+    background-color: #59646f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shop-details button:hover {
+    background-color: #2f3133;
+  }
+  

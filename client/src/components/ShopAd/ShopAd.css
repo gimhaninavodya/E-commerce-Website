@@ -1,0 +1,97 @@
+.shop-ad-container {
+    display: flex;
+    flex-direction: row; /* Ensures items are aligned side by side */
+    align-items: center; /* Vertically centers the content */
+    justify-content: space-between; /* Adds space between text and image */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    margin-top: 30px;
+    margin-left: 120px; /* Centers the component horizontally */
+    margin-right: 120px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+  
+  .shop-ad-text {
+    flex: 2; /* Adjusts width for 60% */
+    padding: 40px;
+  }
+  
+  .shop-ad-text h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .shop-ad-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .shop-ad-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .shop-ad-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .shop-ad-image {
+    display: flex;
+    justify-content: flex-end; /* Aligns the image to the right */
+  }
+  
+  .shop-ad-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block; /* Ensures the image behaves like a block element */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .shop-ad-container {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center; /* Center-align the content */
+    }
+  
+    .shop-ad-text {
+      flex: 1; /* Take full width */
+      padding: 10px;
+    }
+  
+    .shop-ad-image {
+      flex: 1; /* Take full width */
+      margin-top: 20px;
+    }
+  
+    .shop-ad-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .shop-ad-text h2 {
+      font-size: 1.2rem;
+    }
+  
+    .shop-ad-text p {
+      font-size: 0.9rem;
+    }
+  
+    .shop-ad-button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  
