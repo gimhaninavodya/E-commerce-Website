@@ -10,6 +10,7 @@ const AddProduct = () => {
     name: '',
     description: '',
     category : '',
+    subCategory: '',
     price: '',
     stock: '',
     seller: '',
@@ -21,14 +22,25 @@ const AddProduct = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Define subcategories for each category
+  const subcategoryOptions = {
+    fashion: ['Cloths', 'Bags', 'Shoes', 'Accessories'],
+    home: ['Furniture', 'Decor', 'Kitchen Appliances'],
+    beauty: ['Skincare', 'Makeup', 'Haircare'],
+    electronics: ['Mobiles', 'Laptops', 'Cameras'],
+    sports: ['Fitness', 'Outdoor', 'Team Sports'],
+  };
+
 
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    // Reset subcategory if category changes
+    if (name === "category") {
+      setFormData((prev) => ({ ...prev, [name]: value, subCategory: '' }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   // Set seller ID when userData is available
@@ -63,7 +75,7 @@ const AddProduct = () => {
     setSuccessMessage('');
     setErrorMessage('');
 
-    if (!formData.name || !formData.description || !formData.category  || formData.price <= 0 || formData.stock <= 0 || !formData.seller || formData.images.length === 0) {
+    if (!formData.name || !formData.description || !formData.category || !formData.subCategory || formData.price <= 0 || formData.stock <= 0 || !formData.seller || formData.images.length === 0) {
       setErrorMessage('Please fill in all fields and upload at least one image.');
       return;
     }
@@ -145,6 +157,23 @@ const AddProduct = () => {
                 <option value="electronics">Electronics</option>
                 <option value="sports">Sports & Outdoors</option>
               </Form.Select>
+
+              {/* Dropdown for Subcategories */}
+            <Form.Select
+              className="product-field"
+              name="subCategory"
+              value={formData.subCategory}
+              onChange={handleChange}
+              disabled={!formData.category}
+              required
+            >
+              <option value="">Select Subcategory</option>
+              {subcategoryOptions[formData.category]?.map((sub) => (
+                <option key={sub} value={sub}>
+                  {sub}
+                </option>
+              ))}
+            </Form.Select>
             
               <Form.Control
                 className='product-field'
