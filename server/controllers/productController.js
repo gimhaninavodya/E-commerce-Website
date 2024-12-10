@@ -1,16 +1,17 @@
 import Item from "../model/itemModel.js";
 
 export const addItem = async (req, res) => {
-  const { name, description, price, stock, seller } = req.body;
+  const { name, description, category , price, stock, seller } = req.body;
   const imagePaths = req.files.map((file) => file.path); // Get uploaded image paths
 
-  if (!name || !description || !price || !stock || !seller || imagePaths.length === 0) {
+  if (!name || !description || !category  || !price || !stock || !seller || imagePaths.length === 0) {
     return res.status(400).json({ success: false, message: "All fields are required, including images." });
   }
 
   const newItem = new Item({
     name,
     description,
+    category ,
     price,
     stock,
     seller,

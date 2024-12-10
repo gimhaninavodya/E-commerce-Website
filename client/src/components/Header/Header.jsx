@@ -31,11 +31,11 @@ const Header = () => {
                 {/* Navigation */}
                 <nav className={`h-nav ${isMenuOpen ? 'open' : ''}`}>
                     <ul>
-                        <li><Link to="/category1">Cloths</Link></li>
-                        <li><Link to="/category2">Bags & Shoes</Link></li>
-                        <li><Link to="/category3">Accessories</Link></li>
-                        <li><Link to="/category4">Stationary</Link></li>
-                        <li><Link to="/category5">Furniture</Link></li>
+                        <li><Link to="/fashion">Fashion</Link></li>
+                        <li><Link to="/home">Home & Kitchen</Link></li>
+                        <li><Link to="/beauty">Beauty & Personal Care</Link></li>
+                        <li><Link to="/electronics">Electronics</Link></li>
+                        <li><Link to="/sports">Sports & Outdoors</Link></li>
                         
                         <li><div className="h-icons">
                             <Link to="/favorites">

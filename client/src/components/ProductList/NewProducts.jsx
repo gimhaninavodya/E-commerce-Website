@@ -3,8 +3,8 @@ import ProductCard from "../ProductCard/ProductCard";
 import axios from "axios";
 import { useAuth } from "../../contexts/AuthContext";
 
-const ProductList = () => {
-  const { userData } = useAuth(); // Extract userData from AuthContext
+const NewProducts = () => {
+  const { userData } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [likedItems, setLikedItems] = useState([]);
@@ -47,11 +47,11 @@ const ProductList = () => {
 
   return (
     <div>
-      <h3 style={{ textAlign: "left", marginTop: "30px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>Popular Items</h3>
+      <h3 style={{ textAlign: "left", marginTop: "30px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>New Arrivals</h3>
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {products.slice(0,4).map((product) => (
+        {products.slice(-4).map((product) => (
           <ProductCard
             key={product._id}
             product={product}
@@ -65,4 +65,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default NewProducts;

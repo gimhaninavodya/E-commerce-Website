@@ -4,7 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import shop from "../../assets/ad1.jpg";
 import "./ShopInfo.css";
-import { Button } from "react-bootstrap";
 
 const ShopInfo = () => {
   const { userData, login } = useAuth();
@@ -80,7 +79,7 @@ const ShopInfo = () => {
       <br />
 
       <div>
-        {userData && !userData.isSeller ? (
+        {userData && userData.isSeller ? (
           <>
             <button
               className="become-seller-button"
@@ -104,7 +103,7 @@ const ShopInfo = () => {
           </>
         ) : (
           <>
-            <h3>You are a seller! Manage and track your sells now!.</h3>
+          <h3 className="sellercon">You are a seller! Manage and track your sells now!</h3>
             <button
               className="become-seller-button"
               onClick={() => navigate("/mysells")}

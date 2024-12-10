@@ -72,7 +72,7 @@ const MySells = () => {
       </div>
 
       {/* Loading State */}
-      {loading && <p>Loading...</p>}
+      {loading && <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Loading...</p>}
 
       {/* No Products Case */}
       {!loading && products.length === 0 && <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>No products available yet!</p>}

@@ -9,6 +9,7 @@ const AddProduct = () => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
+    category : '',
     price: '',
     stock: '',
     seller: '',
@@ -62,7 +63,7 @@ const AddProduct = () => {
     setSuccessMessage('');
     setErrorMessage('');
 
-    if (!formData.name || !formData.description || formData.price <= 0 || formData.stock <= 0 || !formData.seller || formData.images.length === 0) {
+    if (!formData.name || !formData.description || !formData.category  || formData.price <= 0 || formData.stock <= 0 || !formData.seller || formData.images.length === 0) {
       setErrorMessage('Please fill in all fields and upload at least one image.');
       return;
     }
@@ -128,6 +129,22 @@ const AddProduct = () => {
                 onChange={handleChange}
                 required
               />
+
+              {/* Dropdown for Categories */}
+              <Form.Select
+                className="product-field"
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Category</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="beauty">Beauty & Personal Care</option>
+                <option value="electronics">Electronics</option>
+                <option value="sports">Sports & Outdoors</option>
+              </Form.Select>
             
               <Form.Control
                 className='product-field'

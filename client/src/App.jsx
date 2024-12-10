@@ -11,6 +11,11 @@ import Layout from "./layout/Layout";
 import MySells from "./pages/Sells/MySells";
 import AddProduct from "./components/AddProduct/AddProduct";
 import ShopInfo from "./components/ShopInfo/ShopInfo";
+import Fashion from "./pages/Categories/Fashion";
+import HomeKitchen from "./pages/Categories/Home&Kitchen";
+import Beauty from "./pages/Categories/Beauty";
+import Electronics from "./pages/Categories/Electronics";
+import Sports from "./pages/Categories/Sports";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -43,7 +48,30 @@ export const App = () => {
                 path="/addProduct"
                 element={isAuthenticated ? <AddProduct /> : <Login />}
               />
-              <Route path="/shopinfo" element={<ShopInfo />} />
+              <Route 
+                path="/shopinfo" 
+                element={isAuthenticated ?<ShopInfo /> : <Login />} 
+              />
+              <Route
+                path="/fashion"
+                element={<Fashion/>}
+              />
+              <Route
+                path="/home"
+                element={<HomeKitchen/>}
+              />
+              <Route
+                path="/beauty"
+                element={<Beauty/>}
+              />
+              <Route
+                path="/electronics"
+                element={<Electronics/>}
+              />
+              <Route
+                path="/sports"
+                element={<Sports/>}
+              />
             </Route>
           </Routes>
         </Suspense>
