@@ -54,3 +54,15 @@ export const toggleLikedItem = async (req, res) => {
     res.status(500).json({ message: "Error updating liked items", error });
   }
 };
+
+// Get liked items of a user
+export const getLikedItems = async (req, res) => {
+  const { id } = req.params; // User ID
+  try {
+    const user = await User.findById(id).populate("likedItems");
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.status(200).json(user.likedItems);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching liked items", error });
+  }
+};

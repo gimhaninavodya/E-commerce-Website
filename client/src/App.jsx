@@ -16,6 +16,7 @@ import HomeKitchen from "./pages/Categories/Home&Kitchen";
 import Beauty from "./pages/Categories/Beauty";
 import Electronics from "./pages/Categories/Electronics";
 import Sports from "./pages/Categories/Sports";
+import Favorites from "./pages/favorites/favorites";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -71,6 +72,10 @@ export const App = () => {
               <Route
                 path="/sports"
                 element={<Sports/>}
+              />
+              <Route
+                path="/favorites"
+                element={isAuthenticated ? <Favorites /> : <Login />}
               />
             </Route>
           </Routes>

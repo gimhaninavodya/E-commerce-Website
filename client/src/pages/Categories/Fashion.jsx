@@ -62,12 +62,12 @@ const Fashion = () => {
 
   return (
     <div>
-      <div className="fashion-tabs">
+      <div className="category-tabs">
         {subcategories.map((sub) => (
           <button
             key={sub}
             onClick={() => handleTabClick(sub)}
-            className="fashion-tab-button"
+            className="category-tab-button"
           >
             {sub}
           </button>
