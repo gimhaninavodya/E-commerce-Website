@@ -66,3 +66,63 @@ export const getLikedItems = async (req, res) => {
     res.status(500).json({ message: "Error fetching liked items", error });
   }
 };
+
+// Add item to cart
+export const addToCart = async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    const cartItemIndex = user.cart.findIndex(item => item.productId.toString() === productId);
+    if (cartItemIndex > -1) {
+      // Update quantity if the item is already in the cart
+      user.cart[cartItemIndex].quantity += quantity;
+    } else {
+      // Add new item to cart
+      user.cart.push({ productId, quantity });
+    }
+
+    await user.save();
+    res.status(200).json(user.cart);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating cart", error });
+  }
+};
+
+// Get user's cart
+export const getCart = async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const user = await User.findById(userId).populate("cart.productId"); // Ensure product details are populated
+    if (!user) return res.status(404).json({ message: "User not found" });
+    res.status(200).json(user.cart); // Returning the cart with populated product data
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching cart", error });
+  }
+};
+
+// Update cart item quantity
+export const updateCartQuantity = async (req, res) => {
+  const { userId, productId, quantity } = req.body;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    const cartItemIndex = user.cart.findIndex(item => item.productId.toString() === productId);
+    if (cartItemIndex > -1) {
+      if (quantity === 0) {
+        user.cart.splice(cartItemIndex, 1); // Remove item if quantity is zero
+      } else {
+        user.cart[cartItemIndex].quantity = quantity;
+      }
+    }
+
+    await user.save();
+    res.status(200).json(user.cart);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating cart", error });
+  }
+};

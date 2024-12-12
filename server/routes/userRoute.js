@@ -4,6 +4,9 @@ import {
   becomeSeller,
   toggleLikedItem,
   getLikedItems,
+  addToCart,
+  getCart,
+  updateCartQuantity,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -19,5 +22,11 @@ router.post("/toggle-like", toggleLikedItem);
 
 // Get user's liked items
 router.get("/:id/liked-items", getLikedItems);
+
+router.post("/cart", addToCart);
+
+router.get("/:userId/cart", getCart);
+
+router.patch("/cart/update", updateCartQuantity);
 
 export default router;

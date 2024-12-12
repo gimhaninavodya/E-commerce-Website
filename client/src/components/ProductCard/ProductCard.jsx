@@ -1,9 +1,23 @@
 import React from "react";
 import "./ProductCard.css";
 import HeartButton from "../Heart/HeartButton";
+import axios from "axios";
 
 const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
   const isLiked = likedItems.includes(product._id);
+
+  const addToCart = async (product) => {
+    try {
+      await axios.post("http://localhost:3000/api/user/cart", {
+        userId,
+        productId: product._id,
+        quantity: 1,
+      });
+      alert(`${product.name} added to cart.`);
+    } catch (error) {
+      console.error("Error adding to cart:", error.message);
+    }
+  };
 
   return (
     <div className="card" style={{ position: "relative" }}>
@@ -28,7 +42,7 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
           </div>
         </div>
         <p className="description">{product.description.substring(0, 50)}...</p>
-        <button onClick={() => handleAddToCart(product)} className="addButton">
+        <button onClick={() => addToCart(product)} className="addButton">
           Add to Cart
         </button>
       </div>

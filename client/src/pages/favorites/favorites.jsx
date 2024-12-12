@@ -62,7 +62,7 @@ const Favorites = () => {
           ))}
         </div>
       ) : (
-        <div>No items found.</div>
+        <div style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>No items found.</div>
       )}
     </div>
   );

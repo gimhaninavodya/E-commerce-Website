@@ -17,6 +17,7 @@ import Beauty from "./pages/Categories/Beauty";
 import Electronics from "./pages/Categories/Electronics";
 import Sports from "./pages/Categories/Sports";
 import Favorites from "./pages/favorites/favorites";
+import Cart from "./pages/Cart/Cart";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -76,6 +77,10 @@ export const App = () => {
               <Route
                 path="/favorites"
                 element={isAuthenticated ? <Favorites /> : <Login />}
+              />
+              <Route
+                path="/cart"
+                element={isAuthenticated ? <Cart /> : <Login />}
               />
             </Route>
           </Routes>
