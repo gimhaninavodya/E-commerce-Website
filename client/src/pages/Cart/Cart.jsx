@@ -75,14 +75,14 @@ const Cart = () => {
     }
   };
 
-  if (loading) return <p>Loading your cart...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Loading your cart...</p>;
+  if (error) return <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>{error}</p>;
 
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Your cart is empty.</p>
       ) : (
         <div className="cart-items">
           {cart.map((item) => {
@@ -97,7 +97,7 @@ const Cart = () => {
                   />
                 </div>
                 <div className="cart-item-info">
-                  <h4>{product?.name || "Product Name"}</h4>
+                  <h4>{product?.name || "Product Name1"}</h4>
                   <div className="quantity-control">
                     <button
                       type="button"
