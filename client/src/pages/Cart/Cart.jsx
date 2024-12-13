@@ -12,19 +12,20 @@ const Cart = () => {
 
   useEffect(() => {
     const fetchCart = async () => {
-      setLoading(true);
+      if (!userId) {
+        setError("User ID is missing.");
+        setLoading(false);
+        return;
+      }
+
       try {
-        if (!userId) {
-          throw new Error("User ID is missing.");
-        }
+        setLoading(true);
         const response = await axios.get(
           `http://localhost:3000/api/user/${userId}/cart`
         );
-        console.log("API Response:", response);
         setCart(response.data || []);
-      } catch (error) {
-        console.error("Failed to fetch cart data:", error.message);
-        setError(error.message || "Failed to load cart data.");
+      } catch (err) {
+        setError(err.message || "Failed to load cart data.");
       } finally {
         setLoading(false);
       }
@@ -40,29 +41,39 @@ const Cart = () => {
     }, 0);
   };
 
-  const handleQuantityChange = async (productId, newQuantity) => {
-    if (newQuantity < 1) return;
+  const updateCartItem = async (productId, quantity) => {
+    if (quantity < 1) return;
+
     try {
-      const response = await axios.patch(
-        `http://localhost:3000/api/user/cart/update`,
-        {
-          userId,
-          productId,
-          quantity: newQuantity,
-        }
-      );
+      await axios.patch(`http://localhost:3000/api/user/cart/update`, {
+        userId,
+        productId,
+        quantity,
+      });
       setCart((prevCart) =>
         prevCart.map((item) =>
           item.productId?._id === productId
-            ? { ...item, quantity: newQuantity }
+            ? { ...item, quantity }
             : item
         )
       );
-    } catch (error) {
-      console.error("Failed to update quantity:", error.message);
+    } catch (err) {
+      console.error("Failed to update quantity:", err.message);
     }
   };
-  
+
+  const removeCartItem = async (productId) => {
+    try {
+      await axios.delete(`http://localhost:3000/api/user/cart/remove`, {
+        data: { userId, productId },
+      });
+      setCart((prevCart) =>
+        prevCart.filter((item) => item.productId?._id !== productId)
+      );
+    } catch (err) {
+      console.error("Failed to remove item:", err.message);
+    }
+  };
 
   if (loading) return <p>Loading your cart...</p>;
   if (error) return <p>{error}</p>;
@@ -73,63 +84,55 @@ const Cart = () => {
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div>
-          {cart.map((item) => (
-            <div
-              key={item.productId?._id || item._id}
-              className="cart-item"
-            >
-              <div className="cart-item-details">
-                <img
-                  src={`http://localhost:3000/${item.productId?.images?.[0] || "default-image.jpg"}`}
-                  alt={item.productId?.name || "Product Image"}
-                  className="cart-item-image"
-                />
-                <div>
-                  <h4>{item.productId?.name || "Product Name"}</h4>
-                  <p>
-                    Quantity:
+        <div className="cart-items">
+          {cart.map((item) => {
+            const product = item.productId;
+            return (
+              <div key={product?._id || item._id} className="cart-item">
+                <div className="cart-item-image-container">
+                  <img
+                    src={`http://localhost:3000/${product?.images?.[0] || "default-image.jpg"}`}
+                    alt={product?.name || "Product"}
+                    className="cart-item-image"
+                  />
+                </div>
+                <div className="cart-item-info">
+                  <h4>{product?.name || "Product Name"}</h4>
+                  <div className="quantity-control">
                     <button
                       type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleQuantityChange(
-                          item.productId?._id,
-                          item.quantity - 1
-                        );
-                      }}
                       className="quantity-button"
+                      onClick={() => updateCartItem(product?._id, item.quantity - 1)}
                     >
                       -
                     </button>
-                    {item.quantity}
+                    <span className="quantity-value">{item.quantity}</span>
                     <button
                       type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleQuantityChange(
-                          item.productId?._id,
-                          item.quantity + 1
-                        );
-                      }}
                       className="quantity-button"
+                      onClick={() => updateCartItem(product?._id, item.quantity + 1)}
                     >
                       +
                     </button>
-                  </p>
-                  <p>Price: ${item.productId?.price * item.quantity}</p>
+                  </div>
+                </div>
+                <div className="cart-item-actions">
+                  <p>${(product?.price * item.quantity).toFixed(2)}</p>
                   <button
                     type="button"
-                    onClick={() => handleRemoveItem(item.productId?._id)}
                     className="remove-button"
+                    onClick={() => removeCartItem(product?._id)}
                   >
-                    Remove
+                    🗑️
                   </button>
                 </div>
               </div>
-            </div>
-          ))}
-          <h3>Total: ${calculateTotal()}</h3>
+            );
+          })}
+          <div className="cart-summary">
+            <h3>Total Price: ${calculateTotal().toFixed(2)}</h3>
+            <button className="checkout-button">Check Out</button>
+          </div>
         </div>
       )}
     </div>

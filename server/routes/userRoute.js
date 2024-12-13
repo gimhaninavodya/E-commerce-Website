@@ -7,6 +7,7 @@ import {
   addToCart,
   getCart,
   updateCartQuantity,
+  removeFromCart,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -28,5 +29,7 @@ router.post("/cart", addToCart);
 router.get("/:userId/cart", getCart);
 
 router.patch("/cart/update", updateCartQuantity);
+
+router.delete("/cart/remove", removeFromCart);
 
 export default router;

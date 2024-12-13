@@ -126,3 +126,21 @@ export const updateCartQuantity = async (req, res) => {
     res.status(500).json({ message: "Error updating cart", error });
   }
 };
+
+// Remove item from cart
+export const removeFromCart = async (req, res) => {
+  const { userId, productId } = req.body;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    // Find the cart item index and remove it
+    user.cart = user.cart.filter(item => item.productId.toString() !== productId);
+
+    await user.save();
+    res.status(200).json(user.cart);
+  } catch (error) {
+    res.status(500).json({ message: "Error removing item from cart", error });
+  }
+};
