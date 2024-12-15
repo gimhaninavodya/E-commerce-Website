@@ -29,6 +29,21 @@
   width: 100%; 
 }
 
+.product-btns button{
+  background-color: #59646f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.product-btns button:hover {
+  background-color: #2f3133;
+}
+
 .product-submit-btn{
   width: 30%;
   word-wrap: break-word;

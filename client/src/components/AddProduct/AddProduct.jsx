@@ -224,18 +224,16 @@ const AddProduct = () => {
               </div>
 
               <div className='product-btns'>
-                <Button
+                <button
                   className='product-submit-btn'
-                  variant='warning'
                   onClick={() => navigate(-1)}
                 >BACK
-                </Button>
-                <Button
+                </button>
+                <button
                   className='product-submit-btn'
-                  variant='warning'
                   onClick={handleSubmit}
                 >ADD PRODUCT
-                </Button>
+                </button>
               </div>
             </Form.Group>
           </Form>

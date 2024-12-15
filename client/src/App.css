@@ -13,3 +13,16 @@ body {
 .btn {
   width: 100%;
 }
+
+
+/* Global rule to hide caret */
+* {
+  caret-color: transparent;
+  user-select: none;
+}
+
+/* Allow caret and selection for input fields */
+input, textarea {
+  caret-color: auto;
+  user-select: auto;
+}

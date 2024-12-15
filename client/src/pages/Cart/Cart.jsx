@@ -80,7 +80,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h2>Your Cart</h2>
+      <h2 className="cart-title">Your Cart</h2>
       {cart.length === 0 ? (
         <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Your cart is empty.</p>
       ) : (
