@@ -1,5 +1,5 @@
 import express from "express";
-import { addItem, getAllItems, getItemsByCategory, getUserItems } from "../controllers/productController.js";
+import { addItem, getAllItems, getItemsByCategory, getProductById, getUserItems } from "../controllers/productController.js";
 import upload from "../middlewares/upload.js";
 
 const router = express.Router();
@@ -12,7 +12,9 @@ router.get("/:userId", getUserItems);
 
 router.get("/category/:category", getItemsByCategory);
 
-router.get("/category/:category/:subCategory", getItemsByCategory)
+router.get("/category/:category/:subCategory", getItemsByCategory);
+
+router.get("/get/:id", getProductById);
 
 
 export default router;

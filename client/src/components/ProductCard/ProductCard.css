@@ -83,65 +83,70 @@
   background-color: #f8f8f9;
 }
 
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Responsive Styles */
 
 /* For screens smaller than 768px */
 @media (max-width: 768px) {
   .card {
-    max-width: 100%; /* Make card full width on small screens */
-    margin: 20px; /* Center the card */
+    max-width: 100%;
+    margin: 20px;
     margin-left: 60px;
     margin-right: 60px;
   }
 
   .image {
-    height: auto;
-    width: auto; /* Adjust image height for smaller screens */
+    height: 500;
+    width: 600;
   }
 
   .details h2 {
-    font-size: 18px; /* Reduce font size of product name */
+    font-size: 18px;
   }
 
   .description {
-    font-size: 12px; /* Smaller font for description */
+    font-size: 12px;
   }
 
   .row {
-    flex-direction: column; /* Stack name/description and price on top of each other */
-    align-items: flex-start; /* Align left */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .right {
-    text-align: left; /* Price moves left when stacked */
-    margin-top: 10px; /* Add space between price and description */
+    text-align: left;
+    margin-top: 10px;
   }
 
   .price {
-    font-size: 14px; /* Smaller price font for smaller screens */
+    font-size: 14px;
   }
 
   .addButton {
-    width: 100%; /* Make the add to cart button full width on small screens */
+    width: 100%;
   }
 }
 
 /* For screens smaller than 480px */
 @media (max-width: 480px) {
   .image {
-    height: auto;
-    width: auto; /* Adjust image height for smaller screens */
+    height: 500;
+    width: 600;
   }
 
   .details h2 {
-    font-size: 16px; /* Further reduce product name font size */
+    font-size: 16px;
   }
 
   .price {
-    font-size: 14px; /* Further reduce price font size */
+    font-size: 14px;
   }
 
   .description {
-    font-size: 12px; /* Even smaller description font size */
+    font-size: 12px;
   }
 }
