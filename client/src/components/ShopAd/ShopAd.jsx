@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import shop from '../../assets/ad1.jpg';
+import seller from '../../assets/seller.jpg';
 import "./ShopAd.css";
 
 const ShopAd = () => {
@@ -24,7 +24,7 @@ const ShopAd = () => {
       {/* Right Side: Image */}
       <div className="shop-ad-image">
         <img
-          src={shop} // Replace with your image URL
+          src={seller}
           alt="Become a Seller"
         />
       </div>

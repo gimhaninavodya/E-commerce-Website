@@ -1,0 +1,38 @@
+.heartbutton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  /* Hover and active state for better UX */
+  .heartbutton:hover {
+    transform: scale(1.2);
+  }
+  
+  .heartbutton:active {
+    transform: scale(1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .heartbutton {
+      top: 30px;
+      left: 120px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heartbutton {
+      top: 8px;
+      right: 8px;
+    }
+  }
+  

@@ -1,4 +1,4 @@
-.shop-ad-container {
+.about-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,24 +13,24 @@
     box-sizing: border-box;
   }
   
-  .shop-ad-text {
+  .about-text {
     flex: 2;
     padding: 50px;
   }
   
-  .shop-ad-text h2 {
+  .about-text h2 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 10px;
   }
   
-  .shop-ad-text p {
-    font-size: 1rem;
+  .about-text p {
+    font-size: 1.1rem;
     color: #666;
     margin-bottom: 20px;
   }
   
-  .shop-ad-button {
+  .about-button {
     padding: 10px 20px;
     background-color: #59646f;
     color: white;
@@ -41,16 +41,16 @@
     transition: background-color 0.3s ease;
   }
   
-  .shop-ad-button:hover {
+  .about-button:hover {
     background-color: #2f3133;
   }
   
-  .shop-ad-image {
+  .about-image {
     display: flex;
     justify-content: flex-end;
   }
   
-  .shop-ad-image img {
+  .about-image img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -59,44 +59,43 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .shop-ad-container {
+    .about-container {
       flex-direction: column;
       text-align: center;
       margin-left: 30px;
       margin-right: 30px;  
     }
   
-    .shop-ad-text {
+    .about-text {
       flex: 1;
-      padding: 50px;
+      padding: 10px;
     }
   
-    .shop-ad-image {
+    .about-image {
       flex: 1;
-      margin-top: 20px;
     }
   
-    .shop-ad-button {
+    .about-button {
       font-size: 0.9rem;
       padding: 8px 16px;
     }
   }
   
   @media (max-width: 480px) {
-    .shop-ad-container {
+    .about-container {
       margin-left: 30px;
       margin-right: 30px;  
     }
   
-    .shop-ad-text h2 {
+    .about-text h2 {
       font-size: 1.2rem;
     }
   
-    .shop-ad-text p {
+    .about-text p {
       font-size: 0.9rem;
     }
   
-    .shop-ad-button {
+    .about-button {
       font-size: 0.8rem;
       padding: 6px 12px;
     }

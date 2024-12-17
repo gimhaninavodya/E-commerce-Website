@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MySells.css";
 import { useAuth } from "../../contexts/AuthContext";
-import ProductCard from "../../components/ProductCard/ProductCard";
+//import ProductCard from "../../components/ProductCard/ProductCard";
 import axios from "axios";
+import MyProductCard from "../../components/ProductCard/MyProductCard";
 
 const MySells = () => {
   const { userData } = useAuth(); // Extract userData from AuthContext
@@ -82,7 +83,7 @@ const MySells = () => {
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
         {products.map((product) => (
-          <ProductCard
+          <MyProductCard
             key={product._id}
             product={product}
             handleAddToCart={(item) => console.log("Adding to cart:", item)}

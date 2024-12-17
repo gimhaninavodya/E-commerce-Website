@@ -47,7 +47,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h3 style={{ textAlign: "left", marginTop: "30px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>Popular Items</h3>
+      <h3 className="titleH3">Popular Items</h3>
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >

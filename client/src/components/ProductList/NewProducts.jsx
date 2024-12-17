@@ -47,7 +47,7 @@ const NewProducts = () => {
 
   return (
     <div>
-      <h3 style={{ textAlign: "left", marginTop: "30px", fontWeight:"500", paddingLeft:"120px", color:"GrayText"}}>New Arrivals</h3>
+      <h3 className="titleH3">New Arrivals</h3>
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
