@@ -64,13 +64,13 @@
 
 .image-previews {
   display: flex;
-  gap: 50px; /* Add space between previews */
+  gap: 50px;
 }
 
 .image-preview {
-  width: 100px; /* Set width of each preview */
-  height: 100px; /* Set height of each preview */
-  object-fit: cover; /* Maintain aspect ratio */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 5px;
 }

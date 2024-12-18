@@ -99,8 +99,8 @@ export const Register = () => {
             <br /><br />
             <Form.Item>
               <Button
-                type="default" // Removes primary styling
-                htmlType="submit" // Ensures the button submits the form
+                type="default"
+                htmlType="submit"
                 size="large"
                 className="btn custom-btn"
               >

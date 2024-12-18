@@ -37,9 +37,9 @@
 
 .row {
   display: flex;
-  justify-content: space-between; /* Ensures left and right are spaced apart */
-  align-items: flex-start; /* Aligns items at the top */
-  flex-wrap: wrap; /* Allows items to wrap if the screen is too small */
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .row > div {
@@ -47,7 +47,7 @@
 }
 
 .right {
-  text-align: right; /* Aligns the price to the right within its div */
+  text-align: right;
 }
 
 .price {

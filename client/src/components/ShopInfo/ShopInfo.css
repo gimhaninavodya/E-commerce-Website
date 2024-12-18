@@ -1,7 +1,6 @@
 /* General container styling */
-/* Updated layout for proper left and right alignment */
 .shop-info-container {
-  justify-content: space-between; /* Align content to the left and image to the right */
+  justify-content: space-between;
   gap: 20px;
   padding: 50px;
   font-family: Arial, sans-serif;
@@ -19,12 +18,12 @@
   margin-top: 50px;
   margin-bottom: 40px;
   align-items: flex-start;
-  width: 100%; /* Make it take 50% of the available width */
+  width: 100%;
 }
 
 /* Image styling */
 .shop-info-image {
-  width: 50%; /* Make image take 50% of the width */
+  width: 50%;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -32,7 +31,7 @@
 
 
 .shop-info-image:hover {
-  transform: scale(1.05); /* Subtle zoom on hover */
+  transform: scale(1.05);
 }
 
 /* Details section */
