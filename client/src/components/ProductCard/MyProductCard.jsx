@@ -4,21 +4,8 @@ import HeartButton from "../Heart/HeartButton";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const MyProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
+const MyProductCard = ({ product, updateProduct, deleteProduct, userId, likedItems }) => {
   const isLiked = likedItems.includes(product._id);
-
-  const addToCart = async (product) => {
-    try {
-      await axios.post("http://localhost:3000/api/user/cart", {
-        userId,
-        productId: product._id,
-        quantity: 1,
-      });
-      alert(`${product.name} added to cart.`);
-    } catch (error) {
-      console.error("Error adding to cart:", error.message);
-    }
-  };
 
   return (
     <div className="card" style={{ position: "relative" }}>
@@ -47,12 +34,12 @@ const MyProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
         <p className="description">{product.description.substring(0, 50)}...</p>
         <div className="row">
           <div className="left">
-            <button className="addButton">
+            <button onClick={() => updateProduct(product)} className="addButton">
                 Update
             </button>
           </div>
           <div className="right">
-            <button className="addButton">
+            <button onClick={() => deleteProduct(product._id)} className="addButton">
                 Delete
             </button>
           </div>

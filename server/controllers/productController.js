@@ -84,3 +84,38 @@ export const getProductById = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedProduct = await Item.findByIdAndDelete(id);
+    if (!deletedProduct) {
+      return res.status(404).json({ success: false, message: 'Product not found.' }); 
+    }
+    res.status(200).json({ success: true, message: 'Product deleted successfully.' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const updateProduct = async (req, res) => {
+  const { id } = req.params;
+
+  const { name, description, category, subCategory, price, stock } = req.body;
+  try {
+      const existingProduct = await Item.findById(id);
+      if (!existingProduct) {
+          return res.status(404).json({ success: false, message: 'Product not found.' });
+      }
+
+      // Updating product by ID
+      const updatedProduct = await Item.findByIdAndUpdate(id, { name, description, category, subCategory, price, stock }, { new: true });
+      if (!updatedProduct) {
+          return res.status(404).json({ success: false, message: 'Product not found.' });
+      }
+      res.status(200).json({ success: true, message: 'Product updated successfully.', Item: updatedProduct });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

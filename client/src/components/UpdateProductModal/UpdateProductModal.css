@@ -1,0 +1,27 @@
+.product-update-btns {
+    margin-Top:10px; 
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+  }
+  
+  .product-update-btns button{
+    background-color: #59646f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-update-btns button:hover {
+    background-color: #2f3133;
+  }
+  
+  .product-submit-btn{
+    width: 30%;
+    word-wrap: break-word;
+    margin-top: 10px;
+  }

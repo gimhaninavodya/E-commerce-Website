@@ -2,15 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./MySells.css";
 import { useAuth } from "../../contexts/AuthContext";
-//import ProductCard from "../../components/ProductCard/ProductCard";
 import axios from "axios";
 import MyProductCard from "../../components/ProductCard/MyProductCard";
+import UpdateProductModal from "../../components/UpdateProductModal/UpdateProductModal";
+import Swal from 'sweetalert2';
 
 const MySells = () => {
   const { userData } = useAuth(); // Extract userData from AuthContext
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [likedItems, setLikedItems] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+  const [updatedProduct, setUpdatedProduct] = useState({});
 
   useEffect(() => {
     // Fetch products by the logged-in user
@@ -47,6 +52,68 @@ const MySells = () => {
     fetchUserLikedItems();
   }, [userData]);
 
+  const updateProduct = (product) => {
+    setUpdatedProduct(product);
+    handleShowModal();
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedProduct(prev => ({
+        ...prev,
+        [name]: value,
+    }));
+  };
+
+  const saveUpdatedProduct = async () => {
+    try {
+        await axios.put(`http://localhost:3000/api/product/updateProduct/${updatedProduct._id}`, updatedProduct);
+        handleCloseModal();
+        Swal.fire({
+            title: "Your updated Product is saved!",
+            icon: "success",
+            showConfirmButton: true,
+            confirmButtonColor: "#59646f"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.reload();
+            }
+        });
+    } catch (error) {
+        console.error('Error updating product:', error);
+    }
+  };
+
+  const deleteProduct = async (productId) => {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#59646f",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+        if (result.isConfirmed) {
+            try {
+                await axios.delete(`http://localhost:3000/api/product/deleteProduct/${productId}`);
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your item has been deleted.",
+                    icon: "success",
+                    showConfirmButton: true,
+                    confirmButtonColor: "#59646f"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            } catch (error) {
+                console.error('Error deleting product:', error);
+            }
+        }
+    });
+  };
 
   return (
     <div>
@@ -78,6 +145,14 @@ const MySells = () => {
       {/* No Products Case */}
       {!loading && products.length === 0 && <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>No products available yet!</p>}
 
+      <UpdateProductModal
+        show={showModal}
+        handleClose={handleCloseModal}
+        updatedProduct={updatedProduct}
+        handleChange={handleChange}
+        saveUpdatedProduct={saveUpdatedProduct}
+      />
+
       {/* Product List */}
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
@@ -86,7 +161,8 @@ const MySells = () => {
           <MyProductCard
             key={product._id}
             product={product}
-            handleAddToCart={(item) => console.log("Adding to cart:", item)}
+            updateProduct={updateProduct}
+            deleteProduct={deleteProduct}
             userId={userData?._id}
             likedItems={likedItems}
           />

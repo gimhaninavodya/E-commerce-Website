@@ -3,6 +3,7 @@ import "./ProductCard.css";
 import HeartButton from "../Heart/HeartButton";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
   const isLiked = likedItems.includes(product._id);
@@ -14,7 +15,12 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
         productId: product._id,
         quantity: 1,
       });
-      alert(`${product.name} added to cart.`);
+      Swal.fire({
+        title: "Product Item Added to Cart!",
+        icon: "success",
+        showConfirmButton: true,
+        confirmButtonColor: "#59646f",
+      });
     } catch (error) {
       console.error("Error adding to cart:", error.message);
     }

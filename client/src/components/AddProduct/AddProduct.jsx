@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import "./AddProduct.css";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../contexts/AuthContext";
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
   const { userData } = useAuth();
@@ -101,8 +102,16 @@ const AddProduct = () => {
         setErrorMessage(data.message);
         return;
       }
-      setSuccessMessage('Product added successfully!');
-      window.location.reload();
+      Swal.fire({
+        title: "Product Added Successfully!",
+        icon: "success",
+        showConfirmButton: true,
+        confirmButtonColor: "#59646f",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
+      });
       //can add navigater -> navigatee("/");
     } catch (error) {
       setErrorMessage(
