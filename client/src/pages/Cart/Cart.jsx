@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../contexts/AuthContext";
+import close from "../../assets/close.png";
 import "./Cart.css";
 
 const Cart = () => {
@@ -75,6 +76,10 @@ const Cart = () => {
     }
   };
 
+  const calculateTotalQuantity = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };  
+
   if (loading) return <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Loading your cart...</p>;
   if (error) return <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>{error}</p>;
 
@@ -123,15 +128,35 @@ const Cart = () => {
                     className="remove-button"
                     onClick={() => removeCartItem(product?._id)}
                   >
-                    🗑️
+                    <img src={close} alt="close button" style={{width: "20px", height: "20px"}}/>
                   </button>
                 </div>
               </div>
             );
           })}
           <div className="cart-summary">
-            <h3>Total Price: ${calculateTotal().toFixed(2)}</h3>
-            <button className="checkout-button">Check Out</button>
+            <div className="cart-left">
+              <h5>Pay  ${(calculateTotal() + (calculateTotal() * (2/100)) + (calculateTotalQuantity() * 4)).toFixed(2)} now in here!</h5>
+              <button className="checkout-button">Check Out</button>
+            </div>
+            <div className="cart-right">
+              <div className="cart-summary">
+                <h5>Sub Total Price: </h5>
+                <h5>${calculateTotal().toFixed(2)}</h5>
+              </div><br />
+              <div className="cart-summary">
+                <h5>Shipping Cost: </h5>
+                <h5>${(calculateTotalQuantity() * 4).toFixed(2)}</h5>
+              </div><br />
+              <div className="cart-summary">
+                <h5>Tax Price: </h5>
+                <h5>${(calculateTotal() * (2/100)).toFixed(2)}</h5>
+              </div><br />
+              <div className="cart-summary">
+                <h5>Total Price: </h5>
+                <h5>${(calculateTotal() + (calculateTotal() * (2/100)) + (calculateTotalQuantity() * 4)).toFixed(2)}</h5>
+              </div>
+            </div>
           </div>
         </div>
       )}
