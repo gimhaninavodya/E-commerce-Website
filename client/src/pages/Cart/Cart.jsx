@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../../contexts/AuthContext";
 import close from "../../assets/close.png";
 import "./Cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { userData } = useAuth();
@@ -136,8 +137,10 @@ const Cart = () => {
           })}
           <div className="cart-summary">
             <div className="cart-left">
-              <h5>Pay  ${(calculateTotal() + (calculateTotal() * (2/100)) + (calculateTotalQuantity() * 4)).toFixed(2)} now in here!</h5>
-              <button className="checkout-button">Check Out</button>
+              <h4>Pay  ${(calculateTotal() + (calculateTotal() * (2/100)) + (calculateTotalQuantity() * 4)).toFixed(2)} now in here!</h4>
+              <Link to="/checkout">
+                <button className="checkout-button">Check Out</button>
+              </Link>
             </div>
             <div className="cart-right">
               <div className="cart-summary">

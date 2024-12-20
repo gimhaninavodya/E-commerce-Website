@@ -19,6 +19,7 @@ import Sports from "./pages/Categories/Sports";
 import Favorites from "./pages/favorites/favorites";
 import Cart from "./pages/Cart/Cart";
 import ProductView from "./components/ProductView/ProductView";
+import Checkout from "./components/Checkout/Checkout";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -86,6 +87,10 @@ export const App = () => {
               <Route
                 path="/product/:id"
                 element={<ProductView />}
+              />
+              <Route
+                path="/checkout"
+                element={<Checkout/>}
               />
             </Route>
           </Routes>

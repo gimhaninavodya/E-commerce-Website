@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import authRouter from "./routes/authRoute.js";
 import prodRoute from "./routes/productRoute.js";
 import userRoute from "./routes/userRoute.js";
+import paymentRoute from "./routes/paymentRoute.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 
@@ -43,6 +44,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRouter);
 app.use("/api/product", prodRoute);
 app.use("/api/user", userRoute);
+app.use("/api/payment", paymentRoute);
 
 
 // Server
