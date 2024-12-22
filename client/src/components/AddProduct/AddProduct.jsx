@@ -105,12 +105,10 @@ const AddProduct = () => {
       Swal.fire({
         title: "Product Added Successfully!",
         icon: "success",
-        showConfirmButton: true,
-        confirmButtonColor: "#59646f",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.reload();
-        }
+        showConfirmButton: false,
+        timer: 2000,
+      }).then(() => {
+        window.location.reload();
       });
       //can add navigater -> navigatee("/");
     } catch (error) {

@@ -18,8 +18,8 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
       Swal.fire({
         title: "Product Item Added to Cart!",
         icon: "success",
-        showConfirmButton: true,
-        confirmButtonColor: "#59646f",
+        showConfirmButton: false,
+        timer: 2000,
       });
     } catch (error) {
       console.error("Error adding to cart:", error.message);

@@ -67,18 +67,16 @@ const MySells = () => {
 
   const saveUpdatedProduct = async () => {
     try {
-        await axios.put(`http://localhost:3000/api/product/updateProduct/${updatedProduct._id}`, updatedProduct);
-        handleCloseModal();
-        Swal.fire({
-            title: "Your updated Product is saved!",
-            icon: "success",
-            showConfirmButton: true,
-            confirmButtonColor: "#59646f"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.reload();
-            }
-        });
+      await axios.put(`http://localhost:3000/api/product/updateProduct/${updatedProduct._id}`, updatedProduct);
+      handleCloseModal();
+      Swal.fire({
+        title: "Your updated Product is saved!",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2000,
+      }).then(() => {
+        window.location.reload();
+      });
     } catch (error) {
         console.error('Error updating product:', error);
     }

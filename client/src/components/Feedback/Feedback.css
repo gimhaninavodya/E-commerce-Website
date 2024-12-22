@@ -1,0 +1,113 @@
+.review-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+  
+  .review-details .text-content {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .review-details h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .review-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #6e6e6e;
+  }
+  
+  .review-details strong {
+    font-weight: 400;
+  }
+  
+  .review-details button {
+    background-color: #59646f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .review-details button:hover {
+    background-color: #2f3133;
+  }
+  
+  @media (max-width: 1024px) {
+    .review-details {
+      padding: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .review-details .text-content {
+      margin-right: 0;
+      text-align: center;
+    }
+  
+    .review-details h2 {
+      font-size: 1.8rem;
+    }
+  
+    .review-details p {
+      font-size: 1rem;
+    }
+  
+    .review-details button {
+      padding: 8px 16px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .review-details {
+      padding: 15px;
+    }
+  
+    .review-details h2 {
+      font-size: 1.6rem;
+    }
+  
+    .review-details p {
+      font-size: 0.95rem;
+    }
+  
+    .review-details button {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .review-details {
+      padding: 10px;
+    }
+  
+    .review-details h2 {
+      font-size: 1.4rem;
+    }
+  
+    .review-details p {
+      font-size: 0.9rem;
+    }
+  
+    .review-details button {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+  }
+  

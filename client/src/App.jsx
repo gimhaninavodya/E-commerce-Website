@@ -20,6 +20,8 @@ import Favorites from "./pages/favorites/favorites";
 import Cart from "./pages/Cart/Cart";
 import ProductView from "./components/ProductView/ProductView";
 import Checkout from "./components/Checkout/Checkout";
+import AddFeedback from "./components/AddFeedback/AddFeedback";
+import Feedback from "./components/Feedback/Feedback";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -91,6 +93,14 @@ export const App = () => {
               <Route
                 path="/checkout"
                 element={<Checkout/>}
+              />
+              <Route
+                path="/addReview"
+                element={isAuthenticated ? <AddFeedback/> : <Login />}
+              />
+              <Route
+                path="/reviews"
+                element={<Feedback/>}
               />
             </Route>
           </Routes>

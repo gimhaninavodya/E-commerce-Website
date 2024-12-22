@@ -95,12 +95,10 @@ const Checkout = () => {
       Swal.fire({
         title: "Placed Your Order Successfully!",
         icon: "success",
-        showConfirmButton: true,
-        confirmButtonColor: "#59646f",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/");
-        }
+        showConfirmButton: false,
+        timer: 2000,
+      }).then(() => {
+        navigate("/");
       });
 
       setCart([]); // Update the UI to reflect the empty cart

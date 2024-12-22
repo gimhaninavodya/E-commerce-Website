@@ -4,6 +4,7 @@ import ShopAd from "../components/ShopAd/ShopAd";
 import ProductList from "../components/ProductList/ProductList";
 import NewProducts from "../components/ProductList/NewProducts";
 import AboutUs from "../components/AboutUs/AboutUs";
+import MainFeedback from "../components/MainFeedback/MainFeedback";
 
 const MainWebPage = () => {
   return (
@@ -14,6 +15,7 @@ const MainWebPage = () => {
         <ShopAd/>
         <NewProducts/>
         <AboutUs/>
+        <MainFeedback/>
       </div>
     </div>
   );
