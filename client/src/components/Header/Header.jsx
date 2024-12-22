@@ -20,7 +20,7 @@ const Header = () => {
             <div className="h-container">
                 {/* Logo */}
                 <div className="h-logo">
-                    <h1>COMPANY NAME</h1>
+                    <h1>Lydia</h1>
                 </div>
     
                 {/* Menu Button */}
