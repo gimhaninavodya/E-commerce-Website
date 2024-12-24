@@ -22,13 +22,12 @@ const AboutUs = () => {
             connects buyers and sellers, empowering individuals and businesses
             to thrive in today’s digital marketplace.
           </p>
-
+          <br />
           <p>
             At <strong>Lydiya</strong>, we believe in making shopping easy,
             enjoyable, and secure. Whether you’re a passionate entrepreneur
-            looking to showcase your unique creations or a savvy shopper
-            hunting for the best deals, our platform is designed to meet your
-            needs.
+            looking to showcase your unique creations or a savvy shopper hunting
+            for the best deals, our platform is designed to meet your needs.
           </p>
         </div>
       </div>
@@ -37,19 +36,28 @@ const AboutUs = () => {
       <div className="mission-container">
         {/* Left Side: Text */}
         <div className="mission-text">
-          <h3>Our Mission</h3>
+          <h3>What Sets Us Apart</h3>
           <p>
-            We’re on a mission to simplify e-commerce while fostering
-            creativity and connection. At <strong>Lydiya</strong>, we
-            celebrate individuality and aim to create a vibrant marketplace
-            where everyone has the opportunity to thrive.
+            At <strong>Lydiya</strong>, we go beyond buying and selling; we
+            focus on building trust and fostering connections. Our platform is
+            designed for transparency, quality, and customer satisfaction.
           </p>
-
-          <h3>Join Us Today</h3>
+          <ul>
+            <li>
+              <strong>Community First:</strong> A platform where buyers and
+              sellers can connect and thrive.
+            </li>
+            <li>
+              <strong>Continuous Innovation:</strong> We adapt and evolve with
+              new technology for a better shopping experience.
+            </li>
+          </ul>
+          <br />
+          <h3>Our Commitment to You</h3>
           <p>
-            Become a part of the <strong>Lydiya</strong> community and
-            experience a world of convenience and endless possibilities. Let’s
-            build a better shopping experience together.
+            At <strong>Lydiya</strong>, we promise secure transactions,
+            personalized support, and exceptional service. Join our community
+            and experience a new way to shop.
           </p>
         </div>
 

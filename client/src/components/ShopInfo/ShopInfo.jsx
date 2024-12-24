@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import shop from "../../assets/ad1.jpg";
+import shop1 from "../../assets/shop1.jpg";
+import shop2 from "../../assets/shop2.jpg";
 import "./ShopInfo.css";
 
 const ShopInfo = () => {
@@ -39,7 +40,7 @@ const ShopInfo = () => {
       </p>
 
       <div className="shop-info-content">
-        <img src={shop} alt="Shop illustration" className="shop-info-image" />
+        <img src={shop1} alt="Shop illustration" className="shop-info-image" />
         <div className="shop-info-details">
           <h2>Benefits of Becoming a Seller</h2>
           <ul>
@@ -62,7 +63,7 @@ const ShopInfo = () => {
             <li>Make sure that you are responsible for your products correctivenes and track, increase your sells profit.</li>
           </ul>
         </div>
-        <img src={shop} alt="Shop illustration" className="shop-info-image" />
+        <img src={shop2} alt="Shop illustration" className="shop-info-image" />
       </div>
 
       <br />
