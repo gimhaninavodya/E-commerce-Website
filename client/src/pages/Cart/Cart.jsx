@@ -143,19 +143,19 @@ const Cart = () => {
               </Link>
             </div>
             <div className="cart-right">
-              <div className="cart-summary">
+              <div className="cart-summary-price">
                 <h5>Sub Total Price: </h5>
                 <h5>${calculateTotal().toFixed(2)}</h5>
               </div><br />
-              <div className="cart-summary">
+              <div className="cart-summary-price">
                 <h5>Shipping Cost: </h5>
                 <h5>${(calculateTotalQuantity() * 4).toFixed(2)}</h5>
               </div><br />
-              <div className="cart-summary">
+              <div className="cart-summary-price">
                 <h5>Tax Price: </h5>
                 <h5>${(calculateTotal() * (2/100)).toFixed(2)}</h5>
               </div><br />
-              <div className="cart-summary">
+              <div className="cart-summary-price">
                 <h5>Total Price: </h5>
                 <h5>${(calculateTotal() + (calculateTotal() * (2/100)) + (calculateTotalQuantity() * 4)).toFixed(2)}</h5>
               </div>

@@ -14,7 +14,7 @@ const MainFeedback = () => {
   const fetchFeedbacks = async () => {
     try {
       const response = await axios.get("http://localhost:3000/api/feedback/getFeedback");
-      const filteredFeedbacks = response.data.filter((feedback) => feedback.rating === 5).slice(0, 4);
+      const filteredFeedbacks = response.data.filter((feedback) => feedback.rating === 5).slice(0, 2);
       setFeedbacks(filteredFeedbacks);
     } catch (error) {
       console.error("Error fetching feedbacks:", error);

@@ -1,44 +1,39 @@
-/* Container for shop details */
-.shop-details {
+.shop-ad-container-sells {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  background-color: #f9f9f9;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 1500px;
-  margin: 20px auto;
-  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0.1, 0.3);
+  border-radius: 20px;
+  background-color: #F1E8E3;
+  margin-top: 30px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: 60px;
+  box-sizing: border-box;
 }
 
-/* Text content section */
-.shop-details .text-content {
-  flex: 1;
-  margin-right: 20px;
+.shop-ad-text {
+  flex: 10;
+  padding: 50px;
 }
 
-.shop-details h2 {
+.shop-ad-text h1 {
   font-size: 2rem;
   color: #333;
   margin-bottom: 10px;
 }
 
-.shop-details p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  color: #6e6e6e;
+.shop-ad-text p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-.shop-details strong {
-  font-weight: 400;
-}
-
-/* Button styling */
-.shop-details button {
+.shop-ad-button {
+  padding: 10px 20px;
   background-color: #59646f;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -46,71 +41,72 @@
   transition: background-color 0.3s ease;
 }
 
-.shop-details button:hover {
+.shop-ad-button:hover {
   background-color: #2f3133;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .shop-details {
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .shop-details .text-content {
-    margin-right: 0;
-    text-align: center;
-  }
-
-  .shop-details h2 {
-    font-size: 1.8rem;
-  }
-
-  .shop-details p {
-    font-size: 1rem;
-  }
-
-  .shop-details button {
-    padding: 8px 16px;
-    margin-top: 20px;
-  }
+.shop-ad-image {
+  flex: 9;
+  display: flex;
+  justify-content: flex-end;
 }
 
+.shop-ad-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px 20px 20px 0px;
+  display: block;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .shop-details {
-    padding: 15px;
+  .shop-ad-container-sells {
+    flex-direction: column;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;  
   }
 
-  .shop-details h2 {
-    font-size: 1.6rem;
+  .shop-ad-text {
+    flex: 1;
+    padding: 50px;
   }
 
-  .shop-details p {
-    font-size: 0.95rem;
+  .shop-ad-image {
+    flex: 1;
+    margin-top: 20px;
   }
 
-  .shop-details button {
-    padding: 8px 12px;
+  .shop-ad-image img {
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .shop-ad-button {
     font-size: 0.9rem;
+    padding: 8px 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .shop-details {
-    padding: 10px;
+  .shop-ad-container-sells {
+    margin-left: 30px;
+    margin-right: 30px;  
   }
 
-  .shop-details h2 {
-    font-size: 1.4rem;
+  .shop-ad-text h1 {
+    font-size: 1.2rem;
   }
 
-  .shop-details p {
+  .shop-ad-text p {
     font-size: 0.9rem;
   }
 
-  .shop-details button {
-    padding: 6px 10px;
+  .shop-ad-image img {
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .shop-ad-button {
     font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }

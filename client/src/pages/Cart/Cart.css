@@ -116,11 +116,20 @@
 .cart-summary {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   border-radius: 20px;
-  background-color: #f9f9f9;
-  padding-left: 20px;
+  background-color: #F1E8E3;
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-top: 30px;
+}
+
+.cart-summary-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding-left: 40px;
   padding-right: 20px;
 }
 
@@ -128,11 +137,13 @@
   flex: 1;
   padding: 50px;
   padding-right: 0px;
+  align-items: center;
 }
 
 .cart-left{
   flex: 1;
   justify-content: flex-start;
+  padding-top: 50px;
 }
 
 .cart-summary h5{

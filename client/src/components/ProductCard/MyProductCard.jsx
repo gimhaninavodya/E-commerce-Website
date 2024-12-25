@@ -1,20 +1,10 @@
 import React from "react";
 import "./ProductCard.css";
-import HeartButton from "../Heart/HeartButton";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-const MyProductCard = ({ product, updateProduct, deleteProduct, userId, likedItems }) => {
-  const isLiked = likedItems.includes(product._id);
-
+const MyProductCard = ({ product, updateProduct, deleteProduct, userId }) => {
   return (
     <div className="card" style={{ position: "relative" }}>
-      <HeartButton
-        productId={product._id}
-        userId={userId}
-        isLiked={isLiked}
-        onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
-      />
       <Link to={`/product/${product._id}`} className="product-link">
       <img
         src={`http://localhost:3000/${product.images[0]}`}
