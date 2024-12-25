@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 30px 120px;
+  margin: 10px 120px;
 }
 
 .feedback-title p {
@@ -12,16 +12,16 @@
 }
 
 .feedback-title button {
-    background-color: #59646f;
-    color: white;
-    padding: 8px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .feedback-title button:hover {
-    background-color: #2f3133;
-  }
+  background-color: #59646f;
+  color: white;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-title button:hover {
+  background-color: #2f3133;
+}

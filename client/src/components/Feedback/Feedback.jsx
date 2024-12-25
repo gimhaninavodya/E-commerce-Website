@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Feedback.css";
 import { Link } from "react-router-dom";
+import FeedbackCard from "../FeedbackCard/FeedbackCard";
+import axios from "axios";
 
 const Feedback = () => {
-
   const [loading, setLoading] = useState(true);
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    const fetchFeedback = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/feedback/getFeedback");
+        setFeedbacks(response.data);
+      } catch (error) {
+        console.error("Error fetching feedback:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFeedback();
+  }, []);
 
   return (
     <div>
@@ -20,7 +37,7 @@ const Feedback = () => {
             time on your profile.
             <br />
             <br />
-            Make sure to provide clear reviews it help both customers and us to improve the service.
+            Make sure to provide clear reviews it helps both customers and us to improve the service.
           </p>
           <p>Thank you!</p>
         </div>
@@ -29,7 +46,7 @@ const Feedback = () => {
         </Link>
       </div>
 
-      {loading && (
+      {loading ? (
         <p
           style={{
             margin: "120px",
@@ -41,9 +58,7 @@ const Feedback = () => {
         >
           Loading...
         </p>
-      )}
-
-      {!loading && products.length === 0 && (
+      ) : feedbacks.length === 0 ? (
         <p
           style={{
             margin: "120px",
@@ -55,6 +70,8 @@ const Feedback = () => {
         >
           No reviews available yet!
         </p>
+      ) : (
+        <FeedbackCard feedbacks={feedbacks} />
       )}
     </div>
   );

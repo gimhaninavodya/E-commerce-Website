@@ -22,3 +22,12 @@ export const addFeedback = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const getAllFeedback = async (req, res) => {
+  try {
+    const feedback = await Feedback.find();
+    res.status(200).json(feedback);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
