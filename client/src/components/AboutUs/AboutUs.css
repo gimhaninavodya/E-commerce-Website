@@ -7,7 +7,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0.1, 0.3);
   border-radius: 20px;
   background-color: #F1E8E3;
-  margin: 30px 120px;
+  margin: 30px 120px 10px 120px;
   box-sizing: border-box;
   padding: 20px;
 }
@@ -50,8 +50,8 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0.1, 0.3);
   border-radius: 20px;
   background-color: #F1E8E3;
-  margin: 30px 120px;
-  margin-bottom: 60px;
+  margin: 30px 120px 0px 120px;
+  margin-bottom: 80px;
   box-sizing: border-box;
   padding: 20px;
 }

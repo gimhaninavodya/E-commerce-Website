@@ -58,9 +58,9 @@ const ShopInfo = () => {
           <h2>How to Become a Seller</h2>
           <ul>
             <li>Log in to your account on our platform.</li>
-            <li>By click the "Become a Seller" button below you agree to the seller terms and conditions. Meck sure you read it!</li>
+            <li>By click the "Become a Seller" button below you agree to the seller terms and conditions. Mack sure you read it!</li>
             <li>After that you can manage your shop by adding your products.</li>
-            <li>Make sure that you are responsible for your products correctivenes and track, increase your sells profit.</li>
+            <li>Make sure that you are responsible for your products correctness and track, increase your sells profit.</li>
           </ul>
         </div>
         <img src={shop2} alt="Shop illustration" className="shop-info-image" />
@@ -74,13 +74,13 @@ const ShopInfo = () => {
           <li>Log in to your account on our platform.</li>
           <li>By click the "Become a Seller" button below you agree to the seller terms and conditions.</li>
           <li>After that you can manage your shop by adding your products.</li>
-          <li>Make sure that you are responsible for your products correctivenes and track, increase your sells profit.</li>
+          <li>Make sure that you are responsible for your products correctness and track, increase your sells profit.</li>
         </ul>
       </div>
       <br />
 
       <div>
-        {userData && userData.isSeller ? (
+        {userData && !userData.isSeller ? (
           <>
             <button
               className="become-seller-button"
