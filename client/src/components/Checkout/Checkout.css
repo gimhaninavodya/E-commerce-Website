@@ -1,11 +1,8 @@
 .checkout-container {
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 25px;
-  border: 1px solid #e0e0e0;
   border-radius: 15px;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .checkout-container h2 {
@@ -23,10 +20,24 @@
 }
 
 .checkout-summary {
-  background: #f8f9fa;
+  background: #F1E8E3;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #e9ecef;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-summary h3{
+  text-align: center;
+}
+
+.checkout-summary-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .summary-des {
@@ -57,48 +68,34 @@
   padding: 50px;
 }
 
-.checkout-form {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #e9ecef;
-}
-
-.checkout-form h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #495057;
-}
-
-.checkout-form label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6c757d;
-  margin-bottom: 5px;
-  display: inline-block;
-}
-
-.checkout-form input,
-.checkout-form textarea,
-.checkout-form select {
+.Checkout-form-all {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  background: #ffffff;
-  color: #495057;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
 }
 
-.checkout-form input:focus,
-.checkout-form textarea:focus,
-.checkout-form select:focus {
-  border-color: #2f3133;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.185);
-  outline: none;
+.Checkout-form {
+  width: 90%;
+}
+
+.Checkout-field{
+  margin-bottom: 20px;
+}
+
+.success-message {
+  color: #28a745;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .checkout-form button {

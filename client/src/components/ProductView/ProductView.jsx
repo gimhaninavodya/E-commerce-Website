@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./ProductView.css"; // Import the CSS file
+import { useNavigate, useParams } from "react-router-dom";
+import "./ProductView.css";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useAuth } from "../../contexts/AuthContext";
 
 const ProductView = () => {
   const { id } = useParams();
+  const { userData } = useAuth();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -28,6 +33,49 @@ const ProductView = () => {
 
     fetchProduct();
   }, [id]);
+
+  const userId = userData._id;
+
+  const addToCart = async (product) => {
+    if (!userId) {
+      Swal.fire({
+        title: "Error",
+        text: "User ID is missing. Please log in.",
+        icon: "error",
+        showConfirmButton: true,
+      });
+      return;
+    }
+
+    try {
+      await axios.post("http://localhost:3000/api/user/cart", {
+        userId,
+        productId: product._id,
+        quantity: 1,
+      });
+      Swal.fire({
+        title: "Product Item Added to Cart!",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    } catch (error) {
+      console.error("Error adding to cart:", error.message);
+    }
+  };
+
+  const buyNow = (product) => {
+    if (!userId) {
+      Swal.fire({
+        title: "Error",
+        text: "User ID is missing. Please log in.",
+        icon: "error",
+        showConfirmButton: true,
+      });
+      return;
+    }
+    navigate("/checkout", { state: { product } });
+  };
 
   if (loading) return <div style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Loading...</div>;
   if (error) return <div style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Error: {error}</div>;
@@ -53,13 +101,15 @@ const ProductView = () => {
         </div>
         <p className="product-stock">{product.stock} Available only.</p>
         <p className="seller-info">
-          <strong>Seller, </strong><br /> 
-          {product.seller?.name || "Unknown"}<br />
+          <strong>Seller, </strong>
+          <br />
+          {product.seller?.name || "Unknown"}
+          <br />
           {product.seller?.email || "Not provided"}
         </p>
         <div className="product-buttons">
-          <button className="add-to-cart">Add to Cart</button>
-          <button className="buy-now">Buy Now</button>
+          <button className="add-to-cart" onClick={() => addToCart(product)}>Add to Cart</button>
+          <button className="buy-now" onClick={() => buyNow(product)}>Buy Now</button>
         </div>
       </div>
     </div>
