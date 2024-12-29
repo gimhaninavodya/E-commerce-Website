@@ -47,23 +47,20 @@ const ProductView = () => {
       <div className="product-details">
         <h1 className="product-title">{product.name}</h1>
         <p className="product-description">{product.description}</p>
-        <p className="product-stock">{product.stock} Available only</p>
-        <div className="seller-info">
-          <p>
-            <strong>Seller name - </strong>
-            {product.seller?.name || "Unknown"}
-          </p><br />
-        </div>
         <div className="product-tags">
           <span className="tag">{product.category}</span>
           <span className="tag">{product.subCategory}</span>
-        </div><br /><br />
-        <p className="product-price">Price: ${product.price}.00</p>
-        <div className="product-buttons">
-          <button className="buy-now">Buy now</button>
-          <button className="add-to-cart">Add to cart</button>
         </div>
-        
+        <p className="product-stock">{product.stock} Available only.</p>
+        <p className="seller-info">
+          <strong>Seller, </strong><br /> 
+          {product.seller?.name || "Unknown"}<br />
+          {product.seller?.email || "Not provided"}
+        </p>
+        <div className="product-buttons">
+          <button className="add-to-cart">Add to Cart</button>
+          <button className="buy-now">Buy Now</button>
+        </div>
       </div>
     </div>
   );

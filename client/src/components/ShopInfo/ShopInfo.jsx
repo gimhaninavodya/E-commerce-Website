@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import shop1 from "../../assets/shop1.jpg";
 import shop2 from "../../assets/shop2.jpg";
+import shop3 from "../../assets/shop3.jpg";
 import "./ShopInfo.css";
 
 const ShopInfo = () => {
@@ -79,9 +80,15 @@ const ShopInfo = () => {
       </div>
       <br />
 
-      <div>
+      <div className="shop-content">
+        <div className="shop-image">
+          <img src={shop3} alt="shop" />
+        </div>
+      
+        <div className="shop-info">
         {userData && !userData.isSeller ? (
           <>
+            <h3 className="sellercon">I want to become a seller!</h3>
             <button
               className="become-seller-button"
               onClick={handleBecomeSeller} // Pass the function reference
@@ -113,6 +120,7 @@ const ShopInfo = () => {
             </button>
           </>
         )}
+        </div>
       </div>
     </div>
   );

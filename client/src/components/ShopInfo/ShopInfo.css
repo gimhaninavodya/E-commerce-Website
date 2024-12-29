@@ -60,7 +60,7 @@
 }
 
 .sellercon{
-  margin: 40px 120px 20px 0px;
+  margin: 20px 0px 20px 0px;
   font-size: 1.4rem;
   font-weight:300;
   color:gray;
@@ -110,6 +110,31 @@
   border-radius: 5px;
 }
 
+.shop-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0px 50px 0px;
+  box-sizing: border-box;
+}
+
+.shop-image {
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.shop-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.shop-info {
+  flex: 60%;
+  padding: 20px 0px 20px 50px;
+}
 
 /* Responsive design */
 @media (max-width: 768px) {
