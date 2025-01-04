@@ -22,6 +22,7 @@ import ProductView from "./components/ProductView/ProductView";
 import Checkout from "./components/Checkout/Checkout";
 import AddFeedback from "./components/AddFeedback/AddFeedback";
 import Feedback from "./components/Feedback/Feedback";
+import Membership from "./components/Membership/Membership";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -101,6 +102,10 @@ export const App = () => {
               <Route
                 path="/reviews"
                 element={<Feedback/>}
+              />
+              <Route
+                path="/membership"
+                element={<Membership/>}
               />
             </Route>
           </Routes>

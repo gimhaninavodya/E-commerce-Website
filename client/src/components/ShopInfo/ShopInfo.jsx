@@ -91,7 +91,7 @@ const ShopInfo = () => {
             <h3 className="sellercon">I want to become a seller!</h3>
             <button
               className="become-seller-button"
-              onClick={handleBecomeSeller} // Pass the function reference
+              onClick={() => navigate("/membership")}
               disabled={loading}
             >
               {loading ? "Processing..." : "Become a Seller"}
