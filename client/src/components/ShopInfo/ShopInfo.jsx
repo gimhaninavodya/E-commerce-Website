@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import shop1 from "../../assets/shop1.jpg";
 import shop2 from "../../assets/shop2.jpg";
@@ -12,24 +11,6 @@ const ShopInfo = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
-
-  const handleBecomeSeller = async () => {
-    setLoading(true);
-    setSuccessMessage("");
-    try {
-      const response = await axios.patch(
-        `http://localhost:3000/api/user/${userData._id}/become-seller`
-      );
-      // Update user data locally
-      login(userData.token, { ...userData, role: "seller", isSeller: true });
-      setSuccessMessage("Congratulations! You are now a seller.");
-    } catch (error) {
-      console.error("Error becoming a seller:", error);
-      setSuccessMessage("An error occurred. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="shop-info-container">

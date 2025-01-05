@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Membership.css";
 import ms1 from "../../assets/ms1.png";
 import ms2 from "../../assets/ms2.png";
 import ms3 from "../../assets/ms3.png";
 
 const Membership = () => {
+  const navigate = useNavigate();
+
   const plans = [
     {
       title: "Starter Plan",
@@ -44,6 +47,10 @@ const Membership = () => {
     },
   ];
 
+  const handleGetMembership = (plan) => {
+    navigate("/membershipPayment", { state: { plan } });
+  };
+
   return (
     <div className="membership-container">
       <h1>Get Our Membership!</h1>
@@ -61,7 +68,12 @@ const Membership = () => {
                   alt={`${plan.title} illustration`}
                   className="membership-info-image"
                 />
-                <button className="plan-button">Get Now</button>
+                <button
+                  className="plan-button"
+                  onClick={() => handleGetMembership(plan)}
+                >
+                  Get Now
+                </button>
               </div>
               <div className="membership-info-details">
                 <h2 className="plan-title">{`${plan.title} ($${plan.price}/month)`}</h2>

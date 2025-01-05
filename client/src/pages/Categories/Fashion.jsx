@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ProductCard from "../../components/ProductCard/ProductCard"; // Import the reusable card component
+import ProductCard from "../../components/ProductCard/ProductCard";
 import { useAuth } from "../../contexts/AuthContext";
 import "./CategoryStyle.css";
 
