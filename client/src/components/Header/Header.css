@@ -15,11 +15,12 @@
 }
 
 /* Logo */
-.h-logo h1 {
+.h-logo h1 a{
     font-size: 1.8rem;
     color: #333;
     font-weight: bold;
     padding-left: 120px;
+    text-decoration: none;
 }
 
 /* Navigation */

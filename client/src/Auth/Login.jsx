@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, Button, Card, Flex, Form, Input, Spin, Typography } from "antd";
-import pic1 from "../assets/pic1.jpg";
+import pic1 from "../assets/sign in.png";
 import { Link } from "react-router-dom";
 import useLogin from "../hooks/useLogin.js";
 import "./authStyle.css";

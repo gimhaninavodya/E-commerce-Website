@@ -8,7 +8,7 @@ import prodRoute from "./routes/productRoute.js";
 import userRoute from "./routes/userRoute.js";
 import paymentRoute from "./routes/paymentRoute.js";
 import feedbackRoute from "./routes/feedbackRoute.js";
-import membershipRoute from "./routes/membershipRoute.js";
+import sellerRoute from "./routes/sellerRoute.js";
 import path from "path";
 import { fileURLToPath } from 'url';
 
@@ -48,7 +48,7 @@ app.use("/api/product", prodRoute);
 app.use("/api/user", userRoute);
 app.use("/api/payment", paymentRoute);
 app.use("/api/feedback", feedbackRoute);
-app.use("/api/membership", membershipRoute)
+app.use("/api/seller", sellerRoute);
 
 
 // Server

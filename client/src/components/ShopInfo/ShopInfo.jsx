@@ -72,7 +72,7 @@ const ShopInfo = () => {
             <h3 className="sellercon">I want to become a seller!</h3>
             <button
               className="become-seller-button"
-              onClick={() => navigate("/membership")}
+              onClick={() => navigate("/seller")}
               disabled={loading}
             >
               {loading ? "Processing..." : "Become a Seller"}

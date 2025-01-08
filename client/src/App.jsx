@@ -22,8 +22,7 @@ import ProductView from "./components/ProductView/ProductView";
 import Checkout from "./components/Checkout/Checkout";
 import AddFeedback from "./components/AddFeedback/AddFeedback";
 import Feedback from "./components/Feedback/Feedback";
-import Membership from "./components/Membership/Membership";
-import MembershipPaymentForm from "./components/Membership/MembershipPayment";
+import SellerForm from "./components/Seller/Seller";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -105,12 +104,8 @@ export const App = () => {
                 element={<Feedback/>}
               />
               <Route
-                path="/membership"
-                element={<Membership/>}
-              />
-              <Route
-                path="/membershipPayment"
-                element={<MembershipPaymentForm/>}
+                path="/seller"
+                element={<SellerForm/>}
               />
             </Route>
           </Routes>

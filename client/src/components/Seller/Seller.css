@@ -1,0 +1,54 @@
+.Seller-container{
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+.Seller-container h5{
+  color: #6b6b6b;
+  font-size: 18px;
+}
+.Seller-form {
+    width: 100%;
+  }
+  
+  .Seller-field {
+    margin-bottom: 20px;
+  }
+  
+  .Seller-field:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  }
+  
+  .seller-form h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .seller-form button {
+    width: 100%;
+  padding: 12px;
+  background-color: #59646f;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .Seller-form button:hover {
+    background-color: #2f3133;
+    transform: translateY(-1px);
+  }
+  
+  .Seller-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }

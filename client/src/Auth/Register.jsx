@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert, Button, Card, Flex, Form, Input, Spin, Typography } from "antd";
-import pic from "../assets/pic.jpg";
+import pic from "../assets/create account.jpg";
 import { Link } from "react-router-dom";
 import useSignUp from "../hooks/useSignUp.js";
 import "./authStyle.css";
