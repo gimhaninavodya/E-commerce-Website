@@ -161,3 +161,18 @@ export const clearCart = async (req, res) => {
     res.status(500).json({ message: "Error clearing cart.", error });
   }
 };
+
+export const updateUserById = async (req, res) => {
+  const { id } = req.params;
+  const updatedData = req.body;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(id, updatedData, {
+      new: true, // Return the updated document
+      runValidators: true, // Validate the updated fields
+    });
+    if (!updatedUser) return res.status(404).json({ message: "User not found" });
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ message: "Error updating user data", error });
+  }
+};

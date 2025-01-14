@@ -11,7 +11,7 @@ export const Login = () => {
     await loginUser(values);
   };
   return (
-    <Card className="card-body">
+    <Card className="logging-card-body">
       <Flex gap="large" align="center">
         <Flex flex={1}>
           <img src={pic1} alt="r-pic" className="auth-image" />

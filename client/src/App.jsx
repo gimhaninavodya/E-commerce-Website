@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import { Register } from "./Auth/Register";
 import { Login } from "./Auth/Login";
-import { Profile } from "./components/Profile/Profile";
+import  Profile  from "./components/Profile/Profile";
 import { useAuth } from "./contexts/AuthContext";
 import MainWebPage from "./pages/MainWebPage";
 import Layout from "./layout/Layout";

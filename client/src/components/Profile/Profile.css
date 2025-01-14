@@ -1,0 +1,210 @@
+.profile-container{
+  height: 100%;
+}
+
+.profile-content {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  margin-bottom: 0px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.profile-top-left{
+  display: flex;
+  align-items: center; 
+  gap: 35px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.profile-top-right{
+  text-align: right;
+  margin-right: 30px;
+}
+
+.profile-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.profile-header .profile-btn {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile-header .profile-btn:hover {
+  background-color: #495057;
+}
+
+.profile-header .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 12px 0px 12px 0px;
+}
+.account-status{
+  width: 100%;
+}
+
+.role-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.role-badge.customer {
+  background-color: #e2fde3;
+  color: #2e7d32;
+}
+
+.role-badge.seller {
+  background-color: #f6f9d9;
+  color: #827717;
+}
+
+.account-status {
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.account-status span {
+  font-size: 14px;
+  color: #666;
+}
+
+.account-status h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #28a745;
+}
+
+.profile-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.side-menu {
+  background-color: #F1E8E3;
+  color: rgb(135, 135, 135);
+  padding: 40px;
+  height: 100vh;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.menu-link {
+  font-size: 18px;
+  margin-right: 20px;
+  margin-left: 70px;
+  text-decoration: none;
+  color: rgb(65, 65, 65);
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover .menu-link {
+  color: #141414;
+}
+
+.menu-item:hover {
+  background-color: #bcb3ae;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background-color: #ebc2ac;
+  color: rgb(62, 61, 61);
+  font-weight: bold;
+}
+
+.form-item{
+  margin: 20px 30px 20px 30px;
+}
+
+.form-item-sub{
+  margin: 10px 30px 10px 30px;
+}
+
+.profile-header {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border: 3px solid #6c757d;
+}
+
+.profile-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.form-buttons .form-btn {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 300px;
+  margin-left: 30px;
+  margin-right: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons .form-btn:hover {
+  background-color: #495057;
+}
+
+.form-buttons .edit-btn {
+  background-color: #343a40;
+}
+
+.edit-save-btn{
+  display: flex;
+  justify-content: space-between;
+}
