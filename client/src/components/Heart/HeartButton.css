@@ -15,10 +15,12 @@
   /* Hover and active state for better UX */
   .heartbutton:hover {
     transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0);
   }
   
   .heartbutton:active {
     transform: scale(1);
+    background-color: rgba(0, 0, 0, 0);
   }
   
   /* Responsive adjustments */

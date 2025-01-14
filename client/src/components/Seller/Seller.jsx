@@ -47,19 +47,15 @@ const SellerForm = () => {
       };
       await axios.post("http://localhost:3000/api/seller/addSeller", sellerData);
 
-      if (response.ok) {
-        Swal.fire({
-          title: "Seller Registration Successfully!",
-          icon: "success",
-          showConfirmButton: false,
-          timer: 2000,
-        }).then(() => {
-          navigate("/shopinfo");
-          handleBecomeSeller();
-        });
-      } else {
-        setMessage("Failed to register seller. Please try again.");
-      }
+      Swal.fire({
+        title: "Seller Registration Successfully!",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2000,
+      }).then(() => {
+        navigate("/shopinfo");
+        handleBecomeSeller();
+      });
 
       setFormData({
         name: "",

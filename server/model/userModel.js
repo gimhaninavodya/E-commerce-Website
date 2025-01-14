@@ -15,6 +15,26 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  phone: {
+    type: Number,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  postcode: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
   role: {
     type: String,
     default: "user",
@@ -26,6 +46,10 @@ const userSchema = new mongoose.Schema({
   isSeller: { 
     type: Boolean,
     default: false 
+  },
+  accountStatus:{
+    type: String,
+    default: "active"
   },
   likedItems: [{ 
     type: mongoose.Schema.Types.ObjectId, 

@@ -51,6 +51,73 @@ export const Register = () => {
               <Input size="large" placeholder="Enter your email" />
             </Form.Item>
             <Form.Item
+              label="Phone Number"
+              name="phone"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your phone number!",
+                },
+              ]}
+            >
+              <Input size="large" placeholder="Enter your phone number" />
+            </Form.Item>
+
+            <div className="flex-fields">
+            <Form.Item
+              label="City"
+              name="city"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your city!",
+                },
+              ]}
+            >
+              <Input size="large" placeholder="Enter your city" />
+            </Form.Item>
+            <Form.Item
+              label="State"
+              name="state"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your state!",
+                },
+              ]}
+            >
+              <Input size="large" placeholder="Enter your state" />
+            </Form.Item>
+            </div>
+
+            <div className="flex-fields">
+            <Form.Item
+              label="Postcode"
+              name="postcode"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your postcode!",
+                },
+              ]}
+            >
+              <Input size="large" placeholder="Enter your postcode" />
+            </Form.Item>
+            <Form.Item
+              label="Country"
+              name="country"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your country!",
+                },
+              ]}
+            >
+              <Input size="large" placeholder="Enter your country" />
+            </Form.Item>
+            </div>
+
+            <Form.Item
               label="Password"
               name="password"
               rules={[
@@ -62,7 +129,6 @@ export const Register = () => {
             >
               <Input.Password size="large" placeholder="Enter your password" />
             </Form.Item>
-            <br />
             <Form.Item
               label="Confirm Password"
               name="passwordConfirm"
