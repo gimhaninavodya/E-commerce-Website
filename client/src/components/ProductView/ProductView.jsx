@@ -128,6 +128,7 @@ const ProductView = () => {
             <span className="tag">{product.subCategory}</span>
           </div>
           <p className="product-stock">{product.stock} Available only.</p>
+          <p className="product-price"> $ {product.price}.00 </p>
           <p className="seller-info">
             <strong>Seller, </strong>
             <br />

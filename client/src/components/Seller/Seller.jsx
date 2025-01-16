@@ -142,6 +142,7 @@ const SellerForm = () => {
             </Form.Select>
 
             {/* Shop Price */}
+            <Form.Label htmlFor="businessPrice">Seller Fee</Form.Label>
             <Form.Control
               className="Seller-field"
               placeholder="Shop Price"
