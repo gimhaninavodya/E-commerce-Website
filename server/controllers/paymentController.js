@@ -39,3 +39,13 @@ export const makePayment = async (req, res) => {
     res.status(500).json({ message: "Failed to place the order.", error: err.message });
   }
 };
+
+
+export const getAllPayments = async (req, res) => {
+  try {
+    const payment = await Payment.find();
+    res.status(200).json(payment);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

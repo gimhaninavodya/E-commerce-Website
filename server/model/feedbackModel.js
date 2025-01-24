@@ -21,6 +21,11 @@ const feedbackSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
+  status: {
+    type: String,
+    required: true,
+    default: "pending"
+  }
 });
   
 const Feedback = mongoose.model("Feedback", feedbackSchema);

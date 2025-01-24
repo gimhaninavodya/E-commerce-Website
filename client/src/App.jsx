@@ -23,6 +23,7 @@ import Checkout from "./components/Checkout/Checkout";
 import AddFeedback from "./components/AddFeedback/AddFeedback";
 import Feedback from "./components/Feedback/Feedback";
 import SellerForm from "./components/Seller/Seller";
+import Activities from "./components/Activities/Activities";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -106,6 +107,10 @@ export const App = () => {
               <Route
                 path="/seller"
                 element={<SellerForm/>}
+              />
+              <Route
+                path="/activities"
+                element={<Activities/>}
               />
             </Route>
           </Routes>

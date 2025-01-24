@@ -4,7 +4,7 @@ import { Button, Row, Col, Form } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import "./Profile.css";
 import profile from "../../assets/profile.jpg";
-import { Link } from "react-router-dom";
+import SideMenu from "./SideMenu";
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -52,46 +52,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container d-flex">
-      {/* Left side menu */}
-      <div className="side-menu" style={{ flex: 2 }}>
-        <ul className="menu-list">
-          <li className="menu-item">
-            <Link to="/profile" className="menu-link">
-              Profile
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/dashboard" className="menu-link">
-              Dashboard
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/activities" className="menu-link">
-              Activities
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/settings" className="menu-link">
-              Settings
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/tips-blogs" className="menu-link">
-              Tips & Blogs
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/analysis" className="menu-link">
-              Analysis
-            </Link>
-          </li>
-          <li className="menu-item">
-            <Link to="/contact" className="menu-link">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <SideMenu/>
 
       {/* Right side profile content */}
       <div className="profile-content" style={{ flex: 8 }}>

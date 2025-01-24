@@ -1,0 +1,150 @@
+.activities-container {
+    padding: 20px;
+  }
+  
+  .activity-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    gap: 35px;
+  }
+  
+  .activity-btn {
+    background-color: #f5ebe6;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .activity-btn img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  .button-text {
+    font-weight: 500;
+    color: gray;
+    font-size: 18px;
+  }
+  
+  .activity-btn:hover {
+    background-color: #e3d4ca;
+  }  
+  
+  .recent-purchases {
+    margin-top: 20px;
+  }
+  
+  .purchases-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .purchases-table th,
+  .purchases-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .purchases-table th {
+    background-color: #f5ebe6;
+    font-weight: bold;
+  }
+  
+  .purchases-table tr:hover {
+    background-color: #f9f4f1;
+  }
+  
+  .feedback-history-container {
+    max-width: 100%;
+    margin-top: 50px;
+  }
+  
+  .feedback-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .feedback-history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 80px;
+  }
+  
+  .feedback-history-content {
+    flex: 1;
+  }
+  
+  .feedback-history-rating {
+    color: #ffc107;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-history-description {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .feedback-history-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .feedback-history-status {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .status-approved {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .feedback-action-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .feedback-action-icons img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer; 
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  
+  .feedback-action-icons img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  

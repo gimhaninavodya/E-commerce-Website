@@ -102,12 +102,11 @@
 }
 
 .profile-container {
-  background-color: #f8f9fa;
+  background-color: #F1E8E3;
   min-height: 100vh;
 }
 
 .side-menu {
-  background-color: #F1E8E3;
   color: rgb(135, 135, 135);
   padding: 40px;
   height: 100vh;

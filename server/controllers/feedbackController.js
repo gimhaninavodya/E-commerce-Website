@@ -1,7 +1,7 @@
 import Feedback from "../model/feedbackModel.js";
 
 export const addFeedback = async (req, res) => {
-  const { name, email, roll, rating, message } = req.body;
+  const { name, email, roll, rating, message,status } = req.body;
 
   if (!name || !email || !roll  || !rating || !message ) {
     return res.status(400).json({ success: false, message: "All fields are required." });
@@ -13,6 +13,7 @@ export const addFeedback = async (req, res) => {
     roll ,
     rating,
     message,
+    status,
   });
 
   try {
