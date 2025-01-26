@@ -24,3 +24,25 @@ export const getAllSellers = async(req, res) => {
     res.status(500).json({ error: "Failed to fetch sellers." });
   }
 }
+
+export const getSellerByEmail = async (req, res) => {
+  const { email } = req.params;
+
+  if (!email) {
+    return res.status(400).json({ success: false, message: "Email is required." });
+  }
+
+  try {
+    // Fetch seller details by email
+    const seller = await Seller.findOne({ email: email });
+
+    if (!seller) {
+      return res.status(404).json({ success: false, message: "Seller not found." });
+    }
+
+    res.status(200).json(seller);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Failed to fetch seller details." });
+  }
+};

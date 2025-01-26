@@ -49,3 +49,24 @@ export const getAllPayments = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const getPaymentByEmail = async (req, res) => {
+  const { email } = req.params;
+
+  if (!email) {
+    return res.status(400).json({ success: false, message: "Email is required." });
+  }
+
+  try {
+    const payment = await Payment.find({ email });
+
+    if (!payment || payment.length === 0) {
+      return res.status(404).json({ success: false, message: "No payment found." });
+    }
+
+    res.status(200).json(payment);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Failed to fetch payment." });
+  }
+};
