@@ -10,6 +10,7 @@ import {
   removeFromCart,
   clearCart,
   updateUserById,
+  deleteUser,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -37,5 +38,7 @@ router.delete("/cart/remove", removeFromCart);
 router.post("/cart/clear", clearCart);
 
 router.put("/update/:id", updateUserById);
+
+router.delete("/deleteUser/:id", deleteUser);
 
 export default router;

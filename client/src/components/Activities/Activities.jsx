@@ -182,22 +182,25 @@ const Activities = () => {
         <div className="activities-container">
           <h2>Your Activities</h2>
           <div className="activity-buttons">
-            <button className="activity-btn">
+            <button className="activity-btn" 
+              onClick={() => document.getElementById("recent-purchases").scrollIntoView({ behavior: "smooth" })}>
               <img src={shopping} alt="Recent Purchases" />
               <div className="button-text">Recent Purchases</div>
             </button>
-            <button className="activity-btn">
+            <button className="activity-btn"
+              onClick={() => document.getElementById("feedback-history").scrollIntoView({ behavior: "smooth" })}>
               <img src={rate} alt="Feedback History" />
               <div className="button-text">Feedback History</div>
             </button>
-            <button className="activity-btn">
+            <button className="activity-btn" 
+              onClick={() => document.getElementById("membership-payments").scrollIntoView({ behavior: "smooth" })}>
               <img src={Membership} alt="Membership Payments" />
               <div className="button-text">Membership Payments</div>
             </button>
           </div>
 
           <div className="recent-purchases">
-            <h3>Recent Purchases</h3>
+            <h3 id="recent-purchases">Recent Purchases</h3>
             <table className="purchases-table">
               <thead>
                 <tr>
@@ -221,7 +224,7 @@ const Activities = () => {
           </div>
 
           <div className="feedback-history-container">
-            <h3>Feedback History</h3>
+            <h3 id="feedback-history">Feedback History</h3>
             <div className="feedback-history-list">
               {feedbackList.length > 0 ? (
                 feedbackList.map((feedback) => (
@@ -266,7 +269,7 @@ const Activities = () => {
           </div>
 
           <div className="recent-purchases">
-            <h3>Membership Payments</h3>
+            <h3 id="membership-payments">Membership Payments</h3>
             <table className="purchases-table">
               <thead>
                 <tr>
