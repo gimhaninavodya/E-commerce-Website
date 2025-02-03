@@ -27,14 +27,14 @@
   @media (max-width: 768px) {
     .heartbutton {
       top: 30px;
-      left: 120px;
+      left: 150px;
     }
   }
   
   @media (max-width: 480px) {
     .heartbutton {
-      top: 8px;
-      right: 8px;
+      top: 25px;
+      left: 140px;
     }
   }
   

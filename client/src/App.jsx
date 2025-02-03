@@ -25,6 +25,9 @@ import Feedback from "./components/Feedback/Feedback";
 import SellerForm from "./components/Seller/Seller";
 import Activities from "./components/Activities/Activities";
 import Settings from "./components/SettingsLydia/Settings";
+import Analysis from "./components/Analysis/Analysis";
+import Blogs from "./components/Blogs/Blogs";
+import Inventory from "./components/Inventory/Inventory";
 
 export const App = () => {
   const { isAuthenticated } = useAuth();
@@ -117,6 +120,18 @@ export const App = () => {
                 path="/settings"
                 element={<Settings/>}
               />
+              <Route
+                path="/analysis"
+                element={<Analysis/>}
+              />
+              <Route
+                path="/tips-blogs"
+                element={<Blogs/>}
+              />
+              <Route
+              path="/inventory"
+              element={<Inventory/>}
+            />
             </Route>
           </Routes>
         </Suspense>

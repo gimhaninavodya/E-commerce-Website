@@ -30,11 +30,6 @@ const SideMenu = () => {
                 Settings
                 </Link>
             </li>
-            <li className="menu-item">
-                <Link to="/contact" className="menu-link">
-                Contact
-                </Link>
-            </li>
             </ul>
         </div>
     );

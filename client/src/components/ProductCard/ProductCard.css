@@ -88,7 +88,23 @@
   color: inherit;
 }
 
-/* Responsive Styles */
+.stock-status {
+  justify-content: center;
+  margin: 0px 0px 10px 12px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.in-stock {
+  background-color: aquamarine;
+}
+
+.low-stock {
+  background-color: lightcoral;
+  color: white;
+}
+
 
 /* For screens smaller than 768px */
 @media (max-width: 768px) {

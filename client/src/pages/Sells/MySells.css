@@ -45,6 +45,11 @@
   background-color: #2f3133;
 }
 
+.shop-main-btns{
+  display: flex;
+  gap: 40px;
+}
+
 .shop-ad-image {
   flex: 9;
   display: flex;
@@ -84,6 +89,14 @@
   .shop-ad-button {
     font-size: 0.9rem;
     padding: 8px 16px;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .shop-main-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 

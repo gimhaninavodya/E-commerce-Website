@@ -114,9 +114,14 @@ const MySells = () => {
             Make sure to provide clear product details and set competitive
             prices to attract customers.</p>
             <br />
-          <Link to="/addProduct">
+            <div className="shop-main-btns"><Link to="/addProduct">
             <button className="shop-ad-button">Add Product</button>
           </Link>
+          <Link to="/inventory">
+            <button className="shop-ad-button">Inventory</button>
+          </Link>
+          </div>
+          
         </div>
 
         {/* Right Side: Image */}
