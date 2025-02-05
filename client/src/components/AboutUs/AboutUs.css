@@ -96,6 +96,8 @@
   .about-container, .mission-container {
     flex-direction: column;
     text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .about-text, .mission-text {

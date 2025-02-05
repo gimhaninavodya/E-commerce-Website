@@ -144,4 +144,7 @@ button:hover {
     width: 80%;
     text-align: center;
   }
+  .product-tags{
+    justify-content: center;
+  }
 }

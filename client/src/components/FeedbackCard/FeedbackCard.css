@@ -50,9 +50,58 @@
   color: #ddd;
 }
 
-/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .feedback-container {
+    margin: 30px 60px;
+  }
+
+  .feedback-item {
+    flex: 1 1 calc(50% - 100px);
+    padding: 40px;
+  }
+
+  .feedback-item p {
+    font-size: 1.1rem;
+  }
+
+  .feedback-item h6 {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .feedback-container {
+    margin: 30px 30px;
+  }
+
   .feedback-item {
     flex: 1 1 100%;
+    padding: 35px;
+  }
+
+  .feedback-item p {
+    font-size: 1rem;
+  }
+
+  .feedback-item h6 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-container {
+    margin: 20px;
+  }
+
+  .feedback-item {
+    padding: 30px;
+  }
+
+  .feedback-item p {
+    font-size: 0.95rem;
+  }
+
+  .feedback-item h6 {
+    font-size: 0.8rem;
   }
 }

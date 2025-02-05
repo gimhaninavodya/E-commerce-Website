@@ -22,6 +22,50 @@
   transition: background-color 0.3s ease;
 }
 
-.feedback-title button:hover {
-  background-color: #2f3133;
+@media (max-width: 1024px) {
+  .feedback-title {
+    margin: 10px 60px;
+  }
+
+  .feedback-title p {
+    font-size: 1.2rem;
+  }
+
+  .feedback-title button {
+    padding: 8px 25px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-title {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px 30px;
+  }
+
+  .feedback-title p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .feedback-title button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-title {
+    margin: 15px 20px;
+  }
+
+  .feedback-title p {
+    font-size: 1rem;
+  }
+
+  .feedback-title button {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
 }
