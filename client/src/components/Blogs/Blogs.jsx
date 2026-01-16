@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SideMenu from "../Profile/SideMenu";
-import { blogImages } from "./blogData";
+import { blogImages } from "./blogData.js";
 import "./Blogs.css";
 
 const Blogs = () => {
