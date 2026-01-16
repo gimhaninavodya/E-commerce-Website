@@ -26,7 +26,7 @@ const feedbackSchema = new mongoose.Schema({
     required: true,
     default: "pending"
   }
-});
+}); // add { timestamps: true }
   
 const Feedback = mongoose.model("Feedback", feedbackSchema);
 export default Feedback;

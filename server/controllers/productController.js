@@ -29,7 +29,14 @@ export const addItem = async (req, res) => {
 
 export const getAllItems = async (req, res) => {
   try {
-    const items = await Item.find();
+    const { sortBy } = req.query;
+    let query = Item.find();
+
+    if (sortBy === "popularity") {
+      query = query.sort({ likesCount: -1 });
+    }
+
+    const items = await query;
     res.status(200).json(items);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

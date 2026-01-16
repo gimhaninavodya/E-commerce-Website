@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
 import "./AddProduct.css";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../contexts/AuthContext";

@@ -14,7 +14,7 @@ const ProductList = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/product/getAll"
+          "http://localhost:3000/api/product/getAll?sortBy=popularity"
         );
         setProducts(Array.isArray(response.data) ? response.data : []);
       } catch (error) {

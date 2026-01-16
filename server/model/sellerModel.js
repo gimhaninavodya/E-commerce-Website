@@ -34,7 +34,7 @@ const sellerSchema = new mongoose.Schema({
   cvv: { 
     type: String 
 },
-});
+}); // add { timestamps: true }
 
 const Seller = mongoose.model("Seller", sellerSchema);
 export default Seller;

@@ -52,13 +52,19 @@ const Favorites = () => {
       ) : filteredItems.length > 0 ? (
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "40px" }}>
           {filteredItems.map((item) => (
-            <ProductCard
-              key={item._id}
-              product={item}
-              handleAddToCart={(item) => console.log("Adding to cart:", item)}
-              userId={userData?._id}
-              likedItems={likedItems}
-            />
+              <ProductCard
+                  key={item._id}
+                  product={item}
+                  handleAddToCart={(item) => console.log("Adding to cart:", item)}
+                  userId={userData?._id}
+                  likedItems={likedItems}
+                  // Refresh the list when an item is unliked
+                  onToggle={(updatedLikes) => {
+                    setLikedItems(updatedLikes);
+                    // Remove the item from the display list if it's no longer liked
+                    setFilteredItems(prev => prev.filter(i => i._id !== item._id));
+                  }}
+              />
           ))}
         </div>
       ) : (

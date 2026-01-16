@@ -1,5 +1,5 @@
 import User from "../model/userModel.js";
-
+import Item from "../model/itemModel.js";
 
 // Get user by ID
 export const getUserById = async (req, res) => {
@@ -31,21 +31,24 @@ export const becomeSeller = async (req, res) => {
 
 // Toggle liked item
 export const toggleLikedItem = async (req, res) => {
-  const { userId, productId } = req.body; // Changed `itemId` to `productId`
+  const { userId, productId } = req.body;
 
   try {
     const user = await User.findById(userId);
-
     if (!user) return res.status(404).json({ message: "User not found" });
 
     const likedIndex = user.likedItems.indexOf(productId);
 
     if (likedIndex === -1) {
-      // Add to liked items
+      // Add to User's liked items
       user.likedItems.push(productId);
+      // Increment likesCount on the Product
+      await Item.findByIdAndUpdate(productId, { $inc: { likesCount: 1 } });
     } else {
-      // Remove from liked items
+      // Remove from User's liked items
       user.likedItems.splice(likedIndex, 1);
+      // Decrement likesCount on the Product
+      await Item.findByIdAndUpdate(productId, { $inc: { likesCount: -1 } });
     }
 
     await user.save();
