@@ -1,9 +1,9 @@
 import Seller from "../model/sellerModel.js";
 
 export const createSeller = async(req, res) => {
-    const {name, email, businessName, businessType, ShopPrice, paymentMethod, cardNumber, expiryDate, cvv } = req.body;
+    const {name, email, businessName, businessType, shopPrice, paymentMethod, cardNumber, expiryDate, cvv } = req.body;
     const newSeller = new Seller({
-        name,email,businessName,businessType,ShopPrice,paymentMethod,expiryDate,cardNumber,cvv
+        name,email,businessName,businessType,shopPrice,paymentMethod,expiryDate,cardNumber,cvv
     });
   try {
     await newSeller.save();

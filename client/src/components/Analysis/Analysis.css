@@ -1,0 +1,73 @@
+.analysis-main-content {
+    padding: 2rem;
+    width: 100%;
+}
+
+.analysis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.analysis-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.earnings-badge {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    text-align: right;
+}
+
+.earnings-value {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #28a745;
+}
+
+.analysis-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: none;
+}
+
+.donut-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 110px; /* Uniform height for alignment */
+}
+
+.donut-visual {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.donut-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.category-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.category-desc {
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0;
+}

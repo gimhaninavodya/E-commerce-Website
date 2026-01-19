@@ -3,7 +3,8 @@ import mongoose, { Schema } from "mongoose";
 const itemSchema = new mongoose.Schema({
   name: { 
     type: String, 
-    required: true 
+    required: true,
+    trim: true
   },
   description: { 
     type: String, 
@@ -11,7 +12,8 @@ const itemSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true
+    required: true,
+    index: true
   },
   subCategory: {
     type: String,
@@ -19,23 +21,28 @@ const itemSchema = new mongoose.Schema({
   },
   price: { 
     type: Number, 
-    required: true 
+    required: true,
+    min: [0, "Price cannot be negative"]
   },
   stock: { 
     type: Number, 
-    required: true 
+    required: true,
+    min: [0, "Stock cannot be negative"]
   },
   sold: { 
     type: Number, 
-    default: 0 
+    default: 0,
+    min: 0
   },
   likes: { 
     type: Number, 
-    default: 0 
+    default: 0,
+    min: 0
   },
   likesCount: {
     type: Number,
-    default: 0
+    default: 0,
+    min: 0
   },
   seller: { 
     type: mongoose.Schema.Types.ObjectId, 
@@ -43,10 +50,10 @@ const itemSchema = new mongoose.Schema({
     required: true 
   },
   images: {
-    type: [String], // Array to store image paths
-    required: true,
+    type: [String],
+    required: [true, "At least one image is required"],
   },
-}); // add { timestamps: true }
+}, {timestamps: true});
 
 const Item = mongoose.model("Item", itemSchema);
 export default Item;

@@ -285,7 +285,7 @@ const Activities = () => {
                     <td>{seller.name}</td>
                     <td>{seller.businessType}</td>
                     <td>{seller.paymentMethod}</td>
-                    <td>${seller.ShopPrice}</td>
+                    <td>${seller.shopPrice}</td>
                   </tr>
                 ) : (
                   <tr>
