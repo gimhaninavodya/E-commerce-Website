@@ -26,7 +26,8 @@
   margin-Top:40px; 
   display: flex;
   justify-content: space-between; 
-  width: 100%; 
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .product-btns button{

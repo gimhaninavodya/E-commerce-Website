@@ -30,7 +30,7 @@ export const addItem = async (req, res) => {
 export const getAllItems = async (req, res) => {
   try {
     const { sortBy } = req.query;
-    let query = Item.find();
+    let query = Item.find().populate("seller", "name");
 
     if (sortBy === "popularity") {
       query = query.sort({ likesCount: -1 });
@@ -51,7 +51,7 @@ export const getUserItems = async (req, res) => {
   }
 
   try {
-    const items = await Item.find({ seller: userId });
+    const items = await Item.find({ seller: userId }).populate("seller", "name");
     res.status(200).json(items);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -71,7 +71,7 @@ export const getItemsByCategory = async (req, res) => {
       filter.subCategory = subCategory.toLowerCase();
     }
 
-    const items = await Item.find(filter);
+    const items = await Item.find(filter).populate("seller", "name");
     res.status(200).json(items);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

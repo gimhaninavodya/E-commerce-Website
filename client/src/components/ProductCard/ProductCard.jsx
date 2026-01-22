@@ -4,9 +4,11 @@ import HeartButton from "../Heart/HeartButton";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import defaultProfile from "../../assets/profile.jpg";
 
 const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
   const isLiked = likedItems.includes(product._id);
+  const isOutOfStock = product.stock <= 0;
 
   const addToCart = async (product) => {
     try {
@@ -28,18 +30,21 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
 
   return (
     <div className="card" style={{ position: "relative" }}>
-      <HeartButton
-        productId={product._id}
-        userId={userId}
-        isLiked={isLiked}
-        onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
-      />
+      {isOutOfStock && <div className="sold-out-badge">Sold Out</div>}
+      <div className="heart-button-wrapper">
+        <HeartButton
+            productId={product._id}
+            userId={userId}
+            isLiked={isLiked}
+            onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
+        />
+      </div>
       <Link to={`/product/${product._id}`} className="product-link">
-      <img
-        src={`http://localhost:3000/${product.images[0]}`}
-        alt={product.name}
-        className="image"
-      />
+        <img
+            src={`http://localhost:3000/${product.images[0]}`}
+            alt={product.name}
+            className={`image ${isOutOfStock ? "grayscale" : ""}`}
+        />
       </Link>
       <div className="details">
         <div className="row">
@@ -51,9 +56,20 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
           </div>
         </div>
         <p className="description">{product.description.substring(0, 50)}...</p>
-        <button onClick={() => addToCart(product)} className="addButton">
-          Add to Cart
-        </button>
+        <div className="card-footer-action">
+          <button
+              onClick={() => !isOutOfStock && addToCart(product)}
+              className={`addButton ${isOutOfStock ? "disabled" : ""}`}
+              disabled={isOutOfStock}
+          >
+            {isOutOfStock ? "Sold Out" : "Add to Cart"}
+          </button>
+
+          <div className="seller-info">
+            <span className="seller-name">{product.seller?.name || "Seller"}</span>
+            <img src={defaultProfile} alt="seller" className="seller-avatar" />
+          </div>
+        </div>
       </div>
     </div>
   );

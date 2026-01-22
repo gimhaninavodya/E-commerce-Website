@@ -85,7 +85,7 @@ export default function UpdateProductModal(props) {
                             <Form.Control 
                                 name="stock"
                                 type="number"
-                                value={updatedProduct.stock || ""}
+                                value={updatedProduct.stock ?? ""}
                                 min="0"
                                 style={{  color:"GrayText" }}
                                 onChange={(e) => handleChange(e)}

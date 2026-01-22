@@ -3,13 +3,22 @@ import "./ProductCard.css";
 import { Link } from "react-router-dom";
 
 const InventoryProduct = ({ product, updateProduct, userId }) => {
+  // Calculate remaining stock
+  const remainingStock = product.stock - product.sold;
+
+  // Determine stock status
+  const isSoldOut = remainingStock <= 0;
+  const isLowStock = remainingStock > 0 && remainingStock <= 15;
+
   return (
     <div className="card" style={{ position: "relative" }}>
+      {isSoldOut && <div className="sold-out-badge">Sold Out</div>}
+
       <Link to={`/product/${product._id}`} className="product-link">
         <img
-          src={`http://localhost:3000/${product.images[0]}`}
-          alt={product.name}
-          className="image"
+            src={`http://localhost:3000/${product.images[0]}`}
+            alt={product.name}
+            className={`image ${isSoldOut ? "grayscale" : ""}`}
         />
       </Link>
       <div className="details">
@@ -21,26 +30,29 @@ const InventoryProduct = ({ product, updateProduct, userId }) => {
             <span className="price">$ {product.price}.00</span>
           </div>
         </div>
+        {/* Dynamic Stock Status Bar */}
         <div className="row">
           <span
-            style={{ width: "auto" }}
-            className={`stock-status ${
-              product.stock - product.sold <= 15 ? "low-stock" : "in-stock"
-            }`}
+              style={{ width: "auto" }}
+              className={`stock-status ${
+                  isSoldOut ? "low-stock" : isLowStock ? "low-stock" : "in-stock"
+              }`}
           >
-            {product.stock - product.sold <= 15 ? "Low Stock!" : "In Stock"}
+            {isSoldOut ? "Sold Out!" : isLowStock ? "Low Stock!" : "In Stock"}
           </span>
         </div>
 
         <div className="row">
           <div className="left">
-            <h6>Total Stock</h6>
-            <h2>{product.stock - product.sold}</h2>
+            <h6>Remaining Stock</h6>
+            <h2 style={{ color: isSoldOut ? "red" : "inherit" }}>
+              {product.stock > 0 ? product.stock : 0}
+            </h2>
           </div>
           <div className="right">
             <button
-              onClick={() => updateProduct(product)}
-              className="addButton"
+                onClick={() => updateProduct(product)}
+                className="addButton"
             >
               Update
             </button>

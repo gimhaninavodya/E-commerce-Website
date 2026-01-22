@@ -57,6 +57,7 @@ const ProductView = () => {
   }, [id]);
 
   const userId = userData?._id;
+  const isOutOfStock = product?.stock <= 0;
 
   const addToCart = async (product) => {
     if (!userId) {
@@ -127,9 +128,13 @@ const ProductView = () => {
             <span className="tag">{product.category}</span>
             <span className="tag">{product.subCategory}</span>
           </div>
-          <p className="product-stock">{product.stock} Available only.</p>
+          {isOutOfStock ? (
+              <p className="product-stock out-of-stock-text">Sold Out</p>
+          ) : (
+              <p className="product-stock">{product.stock} Available only.</p>
+          )}
           <p className="product-price"> $ {product.price}.00 </p>
-          <p className="seller-info">
+          <p className="seller-info-1">
             <strong>Seller, </strong>
             <br />
             {product.seller?.name || "Unknown"}
@@ -137,8 +142,21 @@ const ProductView = () => {
             {product.seller?.email || "Not provided"}
           </p>
           <div className="product-buttons">
-            <button className="add-to-cart" onClick={() => addToCart(product)}>Add to Cart</button>
-            <button className="buy-now" onClick={() => buyNow(product)}>Buy Now</button>
+            <button
+                className={`add-to-cart ${isOutOfStock ? "disabled-btn" : ""}`}
+                onClick={() => !isOutOfStock && addToCart(product)}
+                disabled={isOutOfStock}
+            >
+              {isOutOfStock ? "Out of Stock" : "Add to Cart"}
+            </button>
+
+            <button
+                className={`buy-now ${isOutOfStock ? "disabled-btn" : ""}`}
+                onClick={() => !isOutOfStock && buyNow(product)}
+                disabled={isOutOfStock}
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
