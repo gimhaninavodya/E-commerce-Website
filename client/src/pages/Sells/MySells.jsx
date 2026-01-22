@@ -13,29 +13,40 @@ const MySells = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [sellerDetails, setSellerDetails] = useState(null);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
   const [updatedProduct, setUpdatedProduct] = useState({});
 
   useEffect(() => {
-    // Fetch products by the logged-in user
-    const fetchUserProducts = async () => {
-      if (!userData || !userData._id) return;
+    const fetchData = async () => {
+      if (!userData?.email) return;
 
       try {
-        const response = await axios.get(
-          `http://localhost:3000/api/product/${userData._id}`
+        setLoading(true);
+
+        const sellerResponse = await axios.get(
+            `http://localhost:3000/api/seller/getByEmail/${userData.email}`
         );
-        setProducts(Array.isArray(response.data) ? response.data : []);
+
+        console.log("Seller Data received:", sellerResponse.data);
+
+        setSellerDetails(sellerResponse.data);
+
+        const productsResponse = await axios.get(
+            `http://localhost:3000/api/product/${userData._id}`
+        );
+        setProducts(Array.isArray(productsResponse.data) ? productsResponse.data : []);
+
       } catch (error) {
-        console.error("Failed to fetch user products:", error.message);
+        console.error("Failed to fetch shop data:", error.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchUserProducts();
-  }, [userData]);
+    fetchData();
+  }, [userData?.email, userData?._id]);
 
   const updateProduct = (product) => {
     setUpdatedProduct(product);
@@ -108,7 +119,9 @@ const MySells = () => {
       <div className="shop-ad-container-sells">
         {/* Left Side: Text Content */}
         <div className="shop-ad-text">
-          <h1>My Shop</h1>
+          <h1>
+            {sellerDetails?.businessName || "My Shop"}
+          </h1>
           <p>Welcome to Your Shop! Here, you can manage your
             products and showcase them to potential buyers. 
             Make sure to provide clear product details and set competitive
