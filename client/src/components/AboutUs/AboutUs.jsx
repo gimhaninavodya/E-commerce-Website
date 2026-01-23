@@ -42,16 +42,15 @@ const AboutUs = () => {
             focus on building trust and fostering connections. Our platform is
             designed for transparency, quality, and customer satisfaction.
           </p>
-          <ul>
-            <li>
-              <strong>Community First:</strong> A platform where buyers and
-              sellers can connect and thrive.
-            </li>
-            <li>
-              <strong>Continuous Innovation:</strong> We adapt and evolve with
-              new technology for a better shopping experience.
-            </li>
-          </ul>
+          <br/>
+          <p>
+            <strong>Community First:</strong> A platform where buyers and
+            sellers can connect and thrive.
+          </p>
+          <p>
+            <strong>Continuous Innovation:</strong> We adapt and evolve with
+            new technology for a better shopping experience.
+          </p>
           <br />
           <h3>Our Commitment to You</h3>
           <p>

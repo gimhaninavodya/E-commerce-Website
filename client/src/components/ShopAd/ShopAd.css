@@ -61,7 +61,8 @@
       flex-direction: column;
       text-align: center;
       margin-left: 30px;
-      margin-right: 30px;  
+      margin-right: 30px;
+      margin-bottom: 50px;
     }
   
     .shop-ad-text {
@@ -83,7 +84,8 @@
   @media (max-width: 480px) {
     .shop-ad-container {
       margin-left: 30px;
-      margin-right: 30px;  
+      margin-right: 30px;
+      margin-bottom: 50px;
     }
   
     .shop-ad-text h2 {

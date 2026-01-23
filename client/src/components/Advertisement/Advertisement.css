@@ -31,24 +31,24 @@
   /* Media query for tablets */
 @media (max-width: 768px) {
   .ads-slider {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 0;
+      padding-right: 0;
   }
 
   .ad-image {
-      max-height: 300px;
+      max-height: 500px;
   }
 }
 
 /* Media query for mobile screens */
 @media (max-width: 480px) {
   .ads-slider {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 0;
+      padding-right: 0;
   }
 
   .ad-image {
-      max-height: 200px;
+      max-height: 700px;
       border-radius: 10px;
   }
 }

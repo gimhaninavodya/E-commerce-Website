@@ -163,7 +163,7 @@ const ProductView = () => {
 
       {/* Related Products Section */}
       <div>
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="related-products"style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
           {relatedProducts.length > 0 ? (
             relatedProducts.map((relatedProduct) => (
               <ProductCard

@@ -27,7 +27,7 @@ const MainFeedback = () => {
       <div className="feedback-title">
         <p>Meet our valuable customers, Wanna give a review?</p>
         <Link to="/reviews">
-          <button>Learn More</button>
+          <button>More</button>
         </Link>
       </div>
       <FeedbackCard feedbacks={feedbacks} />

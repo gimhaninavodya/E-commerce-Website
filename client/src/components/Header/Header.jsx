@@ -11,65 +11,60 @@ const Header = () => {
     const { isAuthenticated, userData } = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const toggleMenu = () => {setIsMenuOpen(!isMenuOpen);};
+    const closeMenu = () => setIsMenuOpen(false);
 
     return (
         <section className="h-wrapper">
             <div className="h-container">
-                {/* Logo */}
                 <div className="h-logo">
-                    <h1><Link to="/">Lydia</Link></h1>
+                    <h1><Link to="/" onClick={closeMenu}>Lydia</Link></h1>
                 </div>
-    
-                {/* Menu Button */}
+
                 <button className="menu-btn" onClick={toggleMenu}>
-                    &#9776; {/* Hamburger Icon */}
+                    {isMenuOpen ? '✕' : '☰'}
                 </button>
 
-                {/* Navigation */}
                 <nav className={`h-nav ${isMenuOpen ? 'open' : ''}`}>
-                    <ul>
+                    <ul onClick={closeMenu}>
                         <li><Link to="/fashion">Fashion</Link></li>
                         <li><Link to="/home">Home & Kitchen</Link></li>
                         <li><Link to="/beauty">Beauty & Personal Care</Link></li>
                         <li><Link to="/electronics">Electronics</Link></li>
                         <li><Link to="/sports">Sports & Outdoors</Link></li>
-                        
-                        <li><div className="h-icons">
-                            <Link to="/favorites">
-                                <img src={hearticon} alt="Favorites" />
-                            </Link>
-                        </div></li>
-                            
 
-                        <li><div className="h-icons">
-                            <Link to="/cart">
-                                <img src={carticon} alt="Cart" />
-                            </Link>
-                        </div></li>
-
-                        <li>
-                            <div className="h-icons">
-                                {isAuthenticated && userData.role !== "user" && (
-                                <Link to="/mysells">
-                                    <img src={shopicon} alt="Shop" />
-                                </Link>
-                                )}
-                            </div>
-                        </li>
-
-                        <li><div >
+                        {/* Icons for Web View */}
+                        <div className="h-icons desktop-only">
+                            <Link to="/favorites"><img src={hearticon} alt="Favorites" /></Link>
+                            <Link to="/cart"><img src={carticon} alt="Cart" /></Link>
+                            {isAuthenticated && userData.role !== "user" && (
+                                <Link to="/mysells"><img src={shopicon} alt="Shop" /></Link>
+                            )}
                             {isAuthenticated ? (
-                                <Link to="/profile" className="h-icons">
-                                    <img src={profileicon} alt="Profile" />
-                                </Link>
+                                <Link to="/profile"><img src={profileicon} alt="Profile" /></Link>
                             ) : (
-                                <Link to="/register" className="h-nav">
-                                    <button className="h-signin-btn">Sign In</button>
-                                </Link>
-                            )}</div>
+                                <Link to="/register"><button className="h-signin-btn">Sign In</button></Link>
+                            )}
+                        </div>
+
+                        {/* Labeled Icons for Mobile Drawer */}
+                        <li className="mobile-only-item">
+                            <Link to="/favorites"><img src={hearticon} alt="" /> Favorites</Link>
+                        </li>
+                        <li className="mobile-only-item">
+                            <Link to="/cart"><img src={carticon} alt="" /> Cart</Link>
+                        </li>
+                        {isAuthenticated && userData.role !== "user" && (
+                            <li className="mobile-only-item">
+                                <Link to="/mysells"><img src={shopicon} alt="" /> Shop</Link>
+                            </li>
+                        )}
+                        <li className="mobile-only-item">
+                            {isAuthenticated ? (
+                                <Link to="/profile"><img src={profileicon} alt="" /> Profile</Link>
+                            ) : (
+                                <Link to="/register">Sign In</Link>
+                            )}
                         </li>
                     </ul>
                 </nav>

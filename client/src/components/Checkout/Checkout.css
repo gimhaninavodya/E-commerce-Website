@@ -132,21 +132,104 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .checkout-container {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  .checkout-summary,
-  .checkout-form {
+    margin: 10px;
     padding: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
   }
 
-  .checkout-summary h3,
-  .checkout-form h3 {
-    font-size: 18px;
+  .checkout-content {
+    gap: 15px;
+  }
+
+  .checkout-summary {
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  .checkout-summary h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .checkout-allprice {
+    padding: 20px 0 0 0;
+  }
+
+  .checkout-summary-price {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: -10px;
+  }
+
+  .checkout-summary-price h5 {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .summary-des {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .Checkout-form-all {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  .Checkout-form-all h4 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .Checkout-form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .Checkout-field,
+  .form-select.Checkout-field {
+  height: 50px !important;
+  font-size: 16px !important;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 15px;
+  }
+
+  .Checkout-form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  textarea.Checkout-field {
+    height: auto !important;
+    min-height: 80px;
   }
 
   .checkout-form button {
-    font-size: 14px;
+    height: 50px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 15px;
   }
 }

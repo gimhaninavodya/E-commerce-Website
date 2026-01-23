@@ -23,18 +23,3 @@
     background-color: rgba(0, 0, 0, 0);
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .heartbutton {
-      top: 30px;
-      left: 150px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .heartbutton {
-      top: 25px;
-      left: 140px;
-    }
-  }
-  

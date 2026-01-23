@@ -45,12 +45,13 @@ const Favorites = () => {
 
   return (
     <div>
+      <h3 className="titleH3">Favorite Items</h3>
       {loading ? (
         <div style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Loading...</div>
       ) : error ? (
         <div style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Error: {error}</div>
       ) : filteredItems.length > 0 ? (
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "40px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "20px" }}>
           {filteredItems.map((item) => (
               <ProductCard
                   key={item._id}

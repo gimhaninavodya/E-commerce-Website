@@ -31,7 +31,8 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
   return (
     <div className="card" style={{ position: "relative" }}>
       {isOutOfStock && <div className="sold-out-badge">Sold Out</div>}
-      <div className="heart-button-wrapper">
+      {/* TOP HEART: Visible on Web, Hidden on Mobile */}
+      <div className="heart-button-wrapper desktop-heart">
         <HeartButton
             productId={product._id}
             userId={userId}
@@ -64,10 +65,20 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
           >
             {isOutOfStock ? "Sold Out" : "Add to Cart"}
           </button>
-
-          <div className="seller-info">
-            <span className="seller-name">{product.seller?.name || "Seller"}</span>
-            <img src={defaultProfile} alt="seller" className="seller-avatar" />
+          <div className="seller-info-container">
+            {/* BOTTOM HEART: Hidden on Web, Visible on Mobile */}
+            <div className="mobile-heart-inline">
+              <HeartButton
+                  productId={product._id}
+                  userId={userId}
+                  isLiked={isLiked}
+                  onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
+              />
+            </div>
+            <div className="seller-info">
+              <span className="seller-name">{product.seller?.name || "Seller"}</span>
+              <img src={defaultProfile} alt="seller" className="seller-avatar" />
+            </div>
           </div>
         </div>
       </div>

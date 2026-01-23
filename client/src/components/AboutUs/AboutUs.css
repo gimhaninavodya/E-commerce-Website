@@ -100,11 +100,32 @@
     margin-right: 30px;
   }
 
+  .mission-container {
+    margin-bottom: 70px;
+  }
+
   .about-text, .mission-text {
     padding: 10px;
   }
 
   .about-image, .mission-image {
     margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .mission-text h3 {
+    font-size: 1.2rem;
+    color: #4a4949;
+    margin-bottom: 10px;
+  }
+
+  .mission-text p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
   }
 }

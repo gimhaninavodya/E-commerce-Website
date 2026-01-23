@@ -158,6 +158,12 @@ button:hover {
   opacity: 0.7;
 }
 
+.related-products{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .product-container {
@@ -178,7 +184,12 @@ button:hover {
     width: 80%;
     text-align: center;
   }
+
   .product-tags{
     justify-content: center;
+  }
+
+  .related-products{
+    margin-bottom: 30px;
   }
 }

@@ -39,8 +39,7 @@
 
 @media (max-width: 768px) {
   .feedback-title {
-    flex-direction: column;
-    text-align: center;
+    text-align: start;
     margin: 20px 30px;
   }
 
@@ -50,14 +49,15 @@
   }
 
   .feedback-title button {
+    width: 80px;
     font-size: 0.9rem;
-    padding: 8px 20px;
+    padding: 10px 20px;
   }
 }
 
 @media (max-width: 480px) {
   .feedback-title {
-    margin: 15px 20px;
+    margin: 15px 30px;
   }
 
   .feedback-title p {

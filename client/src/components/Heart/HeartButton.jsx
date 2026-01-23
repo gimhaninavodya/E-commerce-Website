@@ -20,9 +20,9 @@ const HeartButton = ({ userId, productId, isLiked, onToggle }) => {
   };
 
   return (
-    <button className="heartbutton" onClick={handleToggleLike}>
-      <FaHeart color={liked ? "red" : "white"} size={25}/>
-    </button>
+      <button className={`heartbutton ${!liked ? "unliked" : ""}`} onClick={handleToggleLike}>
+        <FaHeart color={liked ? "red" : "white"} size={25}/>
+      </button>
   );
 };
 

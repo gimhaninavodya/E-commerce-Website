@@ -85,8 +85,9 @@ const Cart = () => {
   if (error) return <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>{error}</p>;
 
   return (
+    <div>
+      <h3 className="titleH3">Your Cart List</h3>
     <div className="cart-container">
-      <h2 className="cart-title">Your Cart</h2>
       {cart.length === 0 ? (
         <p style={{margin: "120px", textAlign: "center", fontSize: "1.1rem", fontWeight:"300", color:"gray" }}>Your cart is empty.</p>
       ) : (
@@ -163,6 +164,7 @@ const Cart = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
