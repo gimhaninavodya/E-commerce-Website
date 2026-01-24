@@ -14,6 +14,7 @@ const Inventory = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
+    const [sellerDetails, setSellerDetails] = useState(null);
     const handleCloseModal = () => setShowModal(false);
     const handleShowModal = () => setShowModal(true);
     const [updatedProduct, setUpdatedProduct] = useState({});
@@ -21,8 +22,19 @@ const Inventory = () => {
     useEffect(() => {
         const fetchUserProducts = async () => {
             if (!userData || !userData._id) return;
+            if (!userData?.email) return;
 
             try {
+                setLoading(true);
+
+                const sellerResponse = await axios.get(
+                    `http://localhost:3000/api/seller/getByEmail/${userData.email}`
+                );
+
+                console.log("Seller Data received:", sellerResponse.data);
+
+                setSellerDetails(sellerResponse.data);
+
                 const response = await axios.get(
                     `http://localhost:3000/api/product/${userData._id}`
                 );
@@ -35,7 +47,7 @@ const Inventory = () => {
         };
 
         fetchUserProducts();
-    }, [userData]);
+    }, [userData, userData?.email]);
 
     const updateProduct = (product) => {
         setUpdatedProduct(product);
@@ -74,7 +86,7 @@ const Inventory = () => {
         <div>
             <div className="shop-ad-container-sells">
                 <div className="shop-ad-text">
-                    <h1>My Shop</h1>
+                    <h1>{sellerDetails?.businessName || "My Shop"}</h1>
                     <p>Welcome to Your Shop! Here, you can manage your products and showcase them to potential buyers. Make sure to provide clear product details and set competitive prices to attract customers.</p>
                     <br />
                     <div className="shop-main-btns">

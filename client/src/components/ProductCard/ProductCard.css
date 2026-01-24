@@ -226,6 +226,10 @@
     margin-top: 10px;
   }
 
+  .row .left:has(.addButton) {
+    margin-bottom: 10px;
+  }
+
   .price {
     font-size: 14px;
   }
@@ -247,6 +251,29 @@
 
   .desktop-heart {
     display: none !important;
+  }
+
+  .details .row:last-child {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .details .row:last-child .left {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  .details .row:last-child .right {
+    order: 2;
+    text-align: right;
+    margin-top: 0;
+    width: 80%;
+  }
+
+  .details .row:last-child .addButton {
+    width: auto;
+    padding: 8px 15px;
   }
 
   .mobile-heart-inline {
