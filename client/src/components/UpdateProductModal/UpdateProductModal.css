@@ -1,27 +1,72 @@
 .product-update-btns {
-    margin-Top:10px; 
+  margin-Top:10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+  
+.product-update-btns button{
+  background-color: #59646f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+}
+  
+.product-update-btns button:hover {
+  background-color: #2f3133;
+}
+  
+.product-submit-btn{
+  width: 30%;
+  word-wrap: break-word;
+  margin-top: 10px;
+}
+
+.feedback-modal-body {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .modal-body label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-update-btns {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  .product-submit-btn {
+    width: 100% !important;
+    margin-top: 0;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .servicerate {
     display: flex;
-    justify-content: space-between; 
-    width: 100%; 
+    gap: 5px;
+    margin-bottom: 1.5rem;
   }
-  
-  .product-update-btns button{
-    background-color: #59646f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 400;
-    transition: background-color 0.3s ease;
+
+  .servicerate svg {
+    font-size: 1.5rem;
   }
-  
-  .product-update-btns button:hover {
-    background-color: #2f3133;
-  }
-  
-  .product-submit-btn{
-    width: 30%;
-    word-wrap: break-word;
-    margin-top: 10px;
-  }
+}

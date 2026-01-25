@@ -38,12 +38,13 @@ const Analysis = () => {
     }, [userData]);
 
     const prepareChartData = () => {
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"];
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
         const last4Months = [];
         for (let i = 3; i >= 0; i--) {
             const d = new Date();
+            d.setDate(1);
             d.setMonth(d.getMonth() - i);
             last4Months.push(monthNames[d.getMonth()]);
         }
@@ -51,6 +52,7 @@ const Analysis = () => {
         return last4Months.map(m => {
             const entry = { month: m };
             ALL_CATEGORIES.forEach(cat => entry[cat] = 0);
+
             rawStats.filter(s => s._id.month === m).forEach(s => {
                 const catKey = s._id.category.toLowerCase();
                 if (ALL_CATEGORIES.includes(catKey)) {
@@ -83,7 +85,7 @@ const Analysis = () => {
     return (
         <div className="profile-container d-flex">
             <SideMenu />
-            <div className="profile-content" style={{ flex: 8, backgroundColor: "#F8F9FA", minHeight: "100vh" }}>
+            <div className="profile-content analysis-content-wrapper">
                 <div className="analysis-main-content">
                     <div className="analysis-header">
                         <div>

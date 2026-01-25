@@ -207,3 +207,88 @@
   display: flex;
   justify-content: space-between;
 }
+
+.badge-section{
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .side-menu {
+    height: auto;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .menu-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-item {
+    margin-bottom: 0;
+    white-space: nowrap;
+    padding: 8px 15px;
+  }
+
+  .menu-link {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  .profile-content {
+    flex: none !important;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-top-left {
+    flex-direction: column;
+    margin: 0;
+    gap: 10px;
+  }
+
+  .profile-top-right {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .form-item, .form-item-sub {
+    margin: 15px 10px;
+  }
+
+  .form-buttons .form-btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .edit-save-btn {
+    flex-direction: column;
+  }
+
+  .edit-save-btn .ms-2 {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+
+  .badge-section{
+    justify-content: center;
+  }
+}

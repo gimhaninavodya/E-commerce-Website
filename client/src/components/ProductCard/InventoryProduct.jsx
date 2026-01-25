@@ -52,7 +52,7 @@ const InventoryProduct = ({ product, updateProduct, userId }) => {
           <div className="right">
             <button
                 onClick={() => updateProduct(product)}
-                className="addButton"
+                className="addButton-i"
             >
               Update
             </button>

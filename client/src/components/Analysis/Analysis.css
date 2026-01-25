@@ -71,3 +71,79 @@
     color: #888;
     margin: 0;
 }
+
+.analysis-content-wrapper {
+    flex: 8;
+    background-color: #F8F9FA;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .analysis-main-content {
+        padding: 1rem;
+    }
+
+    .analysis-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .earnings-badge {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .analysis-title {
+        font-size: 1.5rem;
+    }
+
+    .chart-wrapper {
+        height: 350px;
+    }
+
+    .card-inner-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .donut-card {
+        height: auto;
+        padding: 1.2rem;
+    }
+
+    .row.g-4 {
+        --bs-gutter-y: 1rem;
+    }
+
+    .side-menu {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .analysis-content-wrapper {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .earnings-value {
+        font-size: 1.25rem;
+    }
+
+    .donut-visual {
+        width: 60px;
+        height: 60px;
+    }
+
+    .donut-percentage {
+        font-size: 0.75rem;
+    }
+}

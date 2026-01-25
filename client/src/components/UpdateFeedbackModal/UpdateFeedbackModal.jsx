@@ -16,7 +16,7 @@ export default function UpdateFeedbackModal(props) {
       <Modal.Header closeButton>
         <Modal.Title>Update your Feedback</Modal.Title>
       </Modal.Header>
-      <Modal.Body style={{ paddingLeft: "30px", paddingRight: "30px" }}>
+      <Modal.Body className="feedback-modal-body">
         <Form>
           <Form.Group>
             <label>Feedback Name</label>

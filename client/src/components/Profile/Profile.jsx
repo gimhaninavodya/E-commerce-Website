@@ -64,7 +64,7 @@ const Profile = () => {
               <h2>My Profile</h2>
               <p>We are happy to hear about you</p>
               {/* User Roles */}
-              <div style={{ display: "flex", gap: "8px", marginTop: "8px" }}>
+              <div className="badge-section" style={{ display: "flex", gap: "8px", marginTop: "8px" }}>
                 <span className="role-badge customer">Customer</span>
                 {user.isSeller && (
                   <span className="role-badge seller">Seller</span>

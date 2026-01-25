@@ -20,7 +20,7 @@ export const getSellerAnalysis = async (req, res) => {
                 $project: {
                     category: "$itemDetails.category",
                     quantity: "$cart.quantity",
-                    monthName: { $dateToString: { format: "%B", date: "$date" } },
+                    monthName: { $dateToString: { format: "%b", date: "$date" } },
                     monthNum: { $month: "$date" },
                     year: { $year: "$date" },
                     // Logic: Price - (Price * 0.20) - 10

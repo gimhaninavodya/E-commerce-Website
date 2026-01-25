@@ -80,8 +80,23 @@
   font-size: 14px;
   transition: background-color 0.3s ease;
 }
+.addButton-i {
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #fbfbfb;
+  color: rgb(86, 86, 86);
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
 
 .addButton:hover {
+  background-color: #f8f8f9;
+}
+
+.addButton-i:hover {
   background-color: #f8f8f9;
 }
 
@@ -198,8 +213,6 @@
   .card {
     max-width: 100%;
     margin: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .image {
@@ -241,6 +254,10 @@
   }
 
   .addButton {
+    width: 100%;
+  }
+
+  .addButton-i {
     width: 100%;
   }
 

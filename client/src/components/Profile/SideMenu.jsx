@@ -5,7 +5,7 @@ import {useAuth} from "../../contexts/AuthContext.jsx";
 const SideMenu = () => {
     const { isAuthenticated, userData } = useAuth();
     return (
-        <div className="side-menu" style={{ flex: 2 }}>
+        <div className="side-menu">
             <ul className="menu-list">
             <li className="menu-item">
                 <Link to="/profile" className="menu-link">
