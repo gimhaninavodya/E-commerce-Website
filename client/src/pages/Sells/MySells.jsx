@@ -67,14 +67,15 @@ const MySells = () => {
           `${import.meta.env.VITE_API_URL}/api/product/updateProduct/${updatedProduct._id}`,
         updatedProduct
       );
+      setProducts((prevProducts) =>
+          prevProducts.map((p) =>
+              p._id === updatedProduct._id ? { ...p, ...updatedProduct } : p));
       handleCloseModal();
       Swal.fire({
         title: "Your updated Product is saved!",
         icon: "success",
         showConfirmButton: false,
         timer: 2000,
-      }).then(() => {
-        window.location.reload();
       });
     } catch (error) {
       console.error("Error updating product:", error);
@@ -96,16 +97,13 @@ const MySells = () => {
           await axios.delete(
               `${import.meta.env.VITE_API_URL}/api/product/deleteProduct/${productId}`
           );
+          setProducts((prevProducts) => prevProducts.filter(p => p._id !== productId));
           Swal.fire({
             title: "Deleted!",
             text: "Your item has been deleted.",
             icon: "success",
             showConfirmButton: true,
             confirmButtonColor: "#59646f",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location.reload();
-            }
           });
         } catch (error) {
           console.error("Error deleting product:", error);
