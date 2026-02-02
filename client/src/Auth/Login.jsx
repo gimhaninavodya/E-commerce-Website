@@ -12,8 +12,8 @@ export const Login = () => {
   };
   return (
     <Card className="logging-card-body">
-      <Flex gap="large" align="center">
-        <Flex flex={1}>
+      <Flex gap="large" align="center" className="auth-main-wrapper">
+        <Flex flex={1} className="auth-image-container">
           <img src={pic1} alt="r-pic" className="auth-image" />
         </Flex>
         <Flex vertical flex={1}>

@@ -43,7 +43,7 @@ const Header = () => {
                             {isAuthenticated ? (
                                 <Link to="/profile"><img src={profileicon} alt="Profile" /></Link>
                             ) : (
-                                <Link to="/register"><button className="h-signin-btn">Sign In</button></Link>
+                                <Link to="/register"><button className="h-signin-btn">Sign Up</button></Link>
                             )}
                         </div>
 
@@ -63,7 +63,7 @@ const Header = () => {
                             {isAuthenticated ? (
                                 <Link to="/profile"><img src={profileicon} alt="" /> Profile</Link>
                             ) : (
-                                <Link to="/register">Sign In</Link>
+                                <Link to="/register">Sign Up</Link>
                             )}
                         </li>
                     </ul>

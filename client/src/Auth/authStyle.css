@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 * {
-  
   font-family: "Poppins", sans-serif;
 }
 
@@ -78,4 +77,34 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .card-body, .logging-card-body {
+    margin: 30px !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .ant-card-body .auth-main-wrapper {
+    display: flex !important;
+  }
+
+  .ant-flex.auth-image-container {
+    display: none !important;
+  }
+
+  .form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .flex-fields {
+    flex-direction: column !important;
+  }
+
+  .flex-fields .ant-form-item {
+    width: 100% !important;
+  }
 }

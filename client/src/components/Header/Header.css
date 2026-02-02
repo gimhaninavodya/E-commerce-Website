@@ -160,11 +160,11 @@
         margin-left: auto;
         font-size: 2rem;
         z-index: 1200;
-        background: none;
         border: none;
         cursor: pointer;
         width: auto !important;
         padding: 0;
+        background-color: rgba(255, 255, 255, 0) !important;
     }
 
     .h-nav {

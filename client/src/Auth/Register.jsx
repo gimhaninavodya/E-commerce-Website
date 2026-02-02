@@ -15,7 +15,7 @@ export const Register = () => {
 
   return (
     <Card className="card-body">
-      <Flex gap="large" align="center">
+      <Flex gap="large" align="center" className="auth-main-wrapper">
         <Flex vertical flex={1}>
           
           <Form className="form" layout="vertical" onFinish={handleRegister} autoComplete="off">
@@ -183,7 +183,7 @@ export const Register = () => {
             </Form.Item>
           </Form>
         </Flex>
-        <Flex flex={1}>
+        <Flex flex={1} className="auth-image-container">
           <img src={pic} alt="r-pic" className="auth-image" />
         </Flex>
       </Flex>
