@@ -2,7 +2,7 @@ import Item from "../model/itemModel.js";
 
 export const addItem = async (req, res) => {
   const { name, description, category, subCategory, price, stock, seller } = req.body;
-  const imagePaths = req.files.map((file) => file.path); // Get uploaded image paths
+  const imagePaths = req.files.map((file) => file.path);
 
   if (!name || !description || !category  || !subCategory || !price || !stock || !seller || imagePaths.length === 0) {
     return res.status(400).json({ success: false, message: "All fields are required, including images." });

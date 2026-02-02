@@ -16,7 +16,7 @@ const InventoryProduct = ({ product, updateProduct, userId }) => {
 
       <Link to={`/product/${product._id}`} className="product-link">
         <img
-            src={`${import.meta.env.VITE_API_URL}/${product.images[0]}`}
+            src={product.images[0]}
             alt={product.name}
             className={`image ${isSoldOut ? "grayscale" : ""}`}
         />

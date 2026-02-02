@@ -114,7 +114,7 @@ const ProductView = () => {
         <div className="product-image">
           {product.images && product.images.length > 0 ? (
             <img
-              src={`${import.meta.env.VITE_API_URL}/${product.images[0]}`}
+              src={product.images[0]}
               alt={product.name}
             />
           ) : (
@@ -163,7 +163,7 @@ const ProductView = () => {
 
       {/* Related Products Section */}
       <div>
-        <div className="related-products"style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        <div className="related-products" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
           {relatedProducts.length > 0 ? (
             relatedProducts.map((relatedProduct) => (
               <ProductCard

@@ -98,7 +98,7 @@ const Cart = () => {
               <div key={product?._id || item._id} className="cart-item">
                 <div className="cart-item-image-container">
                   <img
-                    src={`${import.meta.env.VITE_API_URL}/${product?.images?.[0] || "default-image.jpg"}`}
+                    src={product?.images?.[0] || "default-image.jpg"}
                     alt={product?.name || "Product"}
                     className="cart-item-image"
                   />
