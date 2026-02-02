@@ -61,7 +61,7 @@ const AddFeedback = () => {
     event.preventDefault();
     try {
       const res = await fetch(
-        "http://localhost:3000/api/feedback/addFeedback",
+        `${import.meta.env.VITE_API_URL}/api/feedback/addFeedback`,
         {
           method: "POST",
           headers: {

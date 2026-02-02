@@ -1,68 +1,99 @@
 .feedback_form_title {
-    padding-top: 30px;
-    text-align: center;
-  }
+  padding-top: 30px;
+  text-align: center;
+}
 
 .feedback-form-all {
-    width: 65%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 50px auto;
+  flex-direction: column;
+}
+
+.feedback-form {
+  width: 90%;
+}
+
+.feedback-form label {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #565e65;
+}
+
+.feedback-form h6 {
+  margin-left: 20px;
+}
+  
+.servicerate {
+  margin-bottom: 1rem;
+}
+
+.FillStar,
+.OutlineStar {
+  color: orange;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.feedback-btns {
+  margin-Top:40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+  
+.feedback-btns button{
+  background-color: #59646f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+  
+.feedback-btns button:hover {
+  background-color: #2f3133;
+}
+
+.feedback-submit-btn{
+  width: 30%;
+  word-wrap: break-word;
+  margin-top: 10px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .feedback-form-all {
+    width: auto;
+    margin: 30px 30px 30px 30px;
   }
 
   .feedback-form {
-    width: 90%;
-  }
-
-  .feedback-form label {
-    font-weight: 400;
-    font-size: 1rem;
-    color: #565e65;
-  }
-
-  .feedback-form h6 {
-    margin-left: 20px;
-  }
-  
-  .servicerate {
-    margin-bottom: 1rem;
-  }
-
-  .FillStar,
-  .OutlineStar {
-    color: orange;
-    cursor: pointer;
-    margin-left: 10px;
+    width: 100%;
   }
 
   .feedback-btns {
-    margin-Top:40px; 
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feedback-submit-btn {
+    width: 100%;
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
+
+  .feedback_form_title h2 {
+    font-size: 1.5rem;
+  }
+
+  .servicerate {
     display: flex;
-    justify-content: space-between; 
-    width: 100%; 
+    flex-wrap: wrap;
+    align-items: center;
   }
-  
-  .feedback-btns button{
-    background-color: #59646f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .feedback-btns button:hover {
-    background-color: #2f3133;
-  }
-  
-  .feedback-submit-btn{
-    width: 30%;
-    word-wrap: break-word;
-    margin-top: 10px;
-  }
+}

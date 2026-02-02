@@ -26,7 +26,7 @@ const MySells = () => {
         setLoading(true);
 
         const sellerResponse = await axios.get(
-            `http://localhost:3000/api/seller/getByEmail/${userData.email}`
+            `${import.meta.env.VITE_API_URL}/api/seller/getByEmail/${userData.email}`
         );
 
         console.log("Seller Data received:", sellerResponse.data);
@@ -34,7 +34,7 @@ const MySells = () => {
         setSellerDetails(sellerResponse.data);
 
         const productsResponse = await axios.get(
-            `http://localhost:3000/api/product/${userData._id}`
+            `${import.meta.env.VITE_API_URL}/api/product/${userData._id}`
         );
         setProducts(Array.isArray(productsResponse.data) ? productsResponse.data : []);
 
@@ -64,7 +64,7 @@ const MySells = () => {
   const saveUpdatedProduct = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/api/product/updateProduct/${updatedProduct._id}`,
+          `${import.meta.env.VITE_API_URL}/api/product/updateProduct/${updatedProduct._id}`,
         updatedProduct
       );
       handleCloseModal();
@@ -94,7 +94,7 @@ const MySells = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `http://localhost:3000/api/product/deleteProduct/${productId}`
+              `${import.meta.env.VITE_API_URL}/api/product/deleteProduct/${productId}`
           );
           Swal.fire({
             title: "Deleted!",

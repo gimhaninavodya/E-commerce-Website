@@ -12,7 +12,7 @@ const Feedback = () => {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/feedback/getFeedback");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/feedback/getFeedback`);
         setFeedbacks(response.data);
       } catch (error) {
         console.error("Error fetching feedback:", error);
@@ -42,7 +42,7 @@ const Feedback = () => {
       
         {/* Right Side: Image */}
         <div className="feedback-image">
-          <img src={feedback} alt="Become a Seller" />
+          <img src={feedback} alt="feedback" />
         </div>
       </div>
 

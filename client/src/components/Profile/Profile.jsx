@@ -20,7 +20,7 @@ const Profile = () => {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/user/${userData._id}`
+            `${import.meta.env.VITE_API_URL}/api/user/${userData._id}`
         );
         setUser(response.data);
         setFormData(response.data);
@@ -39,7 +39,7 @@ const Profile = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/user/update/${userData._id}`,
+          `${import.meta.env.VITE_API_URL}/api/user/update/${userData._id}`,
         formData
       );
       setUser(response.data);

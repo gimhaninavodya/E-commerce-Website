@@ -8,7 +8,7 @@ const HeartButton = ({ userId, productId, isLiked, onToggle }) => {
 
   const handleToggleLike = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/user/toggle-like", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/toggle-like`, {
         userId,
         productId,
       });

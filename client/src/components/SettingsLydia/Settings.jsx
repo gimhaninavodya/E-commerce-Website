@@ -27,7 +27,7 @@ const Settings = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:3000/api/user/deleteUser/${userData._id}`);
+          await axios.delete(`${import.meta.env.VITE_API_URL}/api/user/deleteUser/${userData._id}`);
           Swal.fire({
             title: "Deleted!",
             text: "Your account has been deleted.",

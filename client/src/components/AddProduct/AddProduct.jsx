@@ -92,7 +92,7 @@ const AddProduct = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:3000/api/product/create', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/product/create`, {
         method: 'POST',
         body: formDataToSend,
       });
@@ -110,7 +110,7 @@ const AddProduct = () => {
       }).then(() => {
         window.location.reload();
       });
-      //can add navigater -> navigatee("/");
+      //can add navigate -> navigate("/");
     } catch (error) {
       setErrorMessage(
         error.message || 'Something went wrong. Try again later.'

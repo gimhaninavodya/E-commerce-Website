@@ -14,7 +14,7 @@ const ProductList = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/product/getAll?sortBy=popularity"
+            `${import.meta.env.VITE_API_URL}/api/product/getAll?sortBy=popularity`
         );
         setProducts(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
@@ -30,7 +30,7 @@ const ProductList = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/user/${userData._id}`
+            `${import.meta.env.VITE_API_URL}/api/user/${userData._id}`
         );
         setLikedItems(response.data.likedItems || []);
       } catch (error) {

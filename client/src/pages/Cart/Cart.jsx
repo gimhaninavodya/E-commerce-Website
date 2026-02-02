@@ -23,7 +23,7 @@ const Cart = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/api/user/${userId}/cart`
+            `${import.meta.env.VITE_API_URL}/api/user/${userId}/cart`
         );
         setCart(response.data || []);
       } catch (err) {
@@ -47,7 +47,7 @@ const Cart = () => {
     if (quantity < 1) return;
 
     try {
-      await axios.patch(`http://localhost:3000/api/user/cart/update`, {
+      await axios.patch(`${import.meta.env.VITE_API_URL}/api/user/cart/update`, {
         userId,
         productId,
         quantity,
@@ -66,7 +66,7 @@ const Cart = () => {
 
   const removeCartItem = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/user/cart/remove`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/user/cart/remove`, {
         data: { userId, productId },
       });
       setCart((prevCart) =>
@@ -98,7 +98,7 @@ const Cart = () => {
               <div key={product?._id || item._id} className="cart-item">
                 <div className="cart-item-image-container">
                   <img
-                    src={`http://localhost:3000/${product?.images?.[0] || "default-image.jpg"}`}
+                    src={`${import.meta.env.VITE_API_URL}/${product?.images?.[0] || "default-image.jpg"}`}
                     alt={product?.name || "Product"}
                     className="cart-item-image"
                   />

@@ -26,7 +26,7 @@ const Analysis = () => {
         const fetchStats = async () => {
             if (!userData?._id) return;
             try {
-                const res = await axios.get(`http://localhost:3000/api/analysis/seller/${userData._id}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/analysis/seller/${userData._id}`);
                 setRawStats(res.data);
                 const total = res.data.reduce((acc, curr) => acc + curr.totalProfit, 0);
                 setTotalNetWorth(total);

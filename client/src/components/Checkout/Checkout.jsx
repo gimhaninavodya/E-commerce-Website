@@ -43,7 +43,7 @@ const Checkout = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:3000/api/user/${userId}/cart`
+          `${import.meta.env.VITE_API_URL}/api/user/${userId}/cart`
         );
         setCart(response.data || []);
       } catch (err) {
@@ -96,10 +96,10 @@ const Checkout = () => {
       };
 
       // Send order and payment data to the backend
-      await axios.post("http://localhost:3000/api/payment/checkout", orderData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/payment/checkout`, orderData);
 
       if (!singleProduct) {
-        await axios.post("http://localhost:3000/api/user/cart/clear", {
+        await axios.post(`${import.meta.env.VITE_API_URL}/api/user/cart/clear`, {
           userId,
         });
       }
@@ -174,7 +174,7 @@ const Checkout = () => {
             <div className="cart-item">
               <div className="cart-item-image-container">
                 <img
-                  src={`http://localhost:3000/${singleProduct.images?.[0]}`}
+                  src={`${import.meta.env.VITE_API_URL}/${singleProduct.images?.[0]}`}
                   alt={singleProduct.name}
                   className="cart-item-image"
                 />
@@ -225,7 +225,7 @@ const Checkout = () => {
                     <div key={product?._id || item._id} className="cart-item">
                       <div className="cart-item-image-container">
                         <img
-                          src={`http://localhost:3000/${
+                          src={`${import.meta.env.VITE_API_URL}${
                             product?.images?.[0] || "default-image.jpg"
                           }`}
                           alt={product?.name || "Product"}

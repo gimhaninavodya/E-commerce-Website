@@ -16,7 +16,7 @@ const Favorites = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/user/${userData._id}/liked-items`
+            `${import.meta.env.VITE_API_URL}/api/user/${userData._id}/liked-items`
         );
         setFilteredItems(response.data);
       } catch (err) {
@@ -31,7 +31,7 @@ const Favorites = () => {
         if (!userData || !userData._id) return;
   
         try {
-          const response = await axios.get(`http://localhost:3000/api/user/${userData._id}`);
+          const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/${userData._id}`);
           setLikedItems(response.data.likedItems || []);
         } catch (error) {
           console.error("Failed to fetch user data:", error.message);

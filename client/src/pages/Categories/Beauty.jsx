@@ -19,7 +19,7 @@ const Beauty = () => {
     const fetchItems = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:3000/api/product/category/beauty");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/product/category/beauty`);
         setItems(response.data);
         setFilteredItems(response.data); // Initially display all items
       } catch (err) {
@@ -34,7 +34,7 @@ const Beauty = () => {
       if (!userData || !userData._id) return;
 
       try {
-        const response = await axios.get(`http://localhost:3000/api/user/${userData._id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/${userData._id}`);
         setLikedItems(response.data.likedItems || []);
       } catch (error) {
         console.error("Failed to fetch user data:", error.message);

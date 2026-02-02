@@ -7,7 +7,7 @@ const MyProductCard = ({ product, updateProduct, deleteProduct, userId }) => {
     <div className="card" style={{ position: "relative" }}>
       <Link to={`/product/${product._id}`} className="product-link">
       <img
-        src={`http://localhost:3000/${product.images[0]}`}
+        src={`${import.meta.env.VITE_API_URL}/${product.images[0]}`}
         alt={product.name}
         className="image"
       />

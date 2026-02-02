@@ -32,7 +32,7 @@ const Activities = () => {
     if (!userData || !userData.email) return;
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/payment/getPaymentByEmail/${userData.email}`
+        `${import.meta.env.VITE_API_URL}/api/payment/getPaymentByEmail/${userData.email}`
       );
 
       // Sort by date (newest first) and get the most recent 5 payments
@@ -51,7 +51,7 @@ const Activities = () => {
     if (!userData || !userData.email) return;
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/feedback/getFeedbackByEmail/${userData.email}`
+        `${import.meta.env.VITE_API_URL}/api/feedback/getFeedbackByEmail/${userData.email}`
       );
 
       const data = response.data;
@@ -70,7 +70,7 @@ const Activities = () => {
     if (!userData || !userData.email) return;
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/seller/getByEmail/${userData.email}`
+        `${import.meta.env.VITE_API_URL}/api/seller/getByEmail/${userData.email}`
       );
       setSeller(response.data);
     } catch (error) {
@@ -117,7 +117,7 @@ const Activities = () => {
   const saveUpdatedFeedback = async () => {
     try {
       await axios.put(
-        `http://localhost:3000/api/feedback/updateFeedback/${updatedFeedback._id}`,
+        `${import.meta.env.VITE_API_URL}/api/feedback/updateFeedback/${updatedFeedback._id}`,
         updatedFeedback
       );
       handleCloseModal();
@@ -147,7 +147,7 @@ const Activities = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `http://localhost:3000/api/feedback/deleteFeedback/${feedbackId}`
+            `${import.meta.env.VITE_API_URL}/api/feedback/deleteFeedback/${feedbackId}`
           );
           Swal.fire({
             title: "Deleted!",

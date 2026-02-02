@@ -28,7 +28,7 @@ const Inventory = () => {
                 setLoading(true);
 
                 const sellerResponse = await axios.get(
-                    `http://localhost:3000/api/seller/getByEmail/${userData.email}`
+                    `${import.meta.env.VITE_API_URL}/api/seller/getByEmail/${userData.email}`
                 );
 
                 console.log("Seller Data received:", sellerResponse.data);
@@ -36,7 +36,7 @@ const Inventory = () => {
                 setSellerDetails(sellerResponse.data);
 
                 const response = await axios.get(
-                    `http://localhost:3000/api/product/${userData._id}`
+                    `${import.meta.env.VITE_API_URL}/api/product/${userData._id}`
                 );
                 setProducts(Array.isArray(response.data) ? response.data : []);
             } catch (error) {
@@ -65,7 +65,7 @@ const Inventory = () => {
     const saveUpdatedProduct = async () => {
         try {
             await axios.put(
-                `http://localhost:3000/api/product/updateProduct/${updatedProduct._id}`,
+                `${import.meta.env.VITE_API_URL}/api/product/updateProduct/${updatedProduct._id}`,
                 updatedProduct
             );
             handleCloseModal();

@@ -45,7 +45,7 @@ const SellerForm = () => {
         ...formData,
         date: new Date(),
       };
-      await axios.post("http://localhost:3000/api/seller/addSeller", sellerData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/seller/addSeller`, sellerData);
 
       Swal.fire({
         title: "Seller Registration Successfully!",
@@ -79,7 +79,7 @@ const SellerForm = () => {
     setSuccessMessage("");
     try {
       const response = await axios.patch(
-        `http://localhost:3000/api/user/${userData._id}/become-seller`
+          `${import.meta.env.VITE_API_URL}/api/user/${userData._id}/become-seller`
       );
       login(userData.token, { ...userData, role: "seller", isSeller: true });
       setSuccessMessage("Congratulations! You are now a seller.");

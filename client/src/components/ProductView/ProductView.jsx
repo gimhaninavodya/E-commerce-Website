@@ -21,13 +21,13 @@ const ProductView = () => {
       try {
         // Fetch the main product
         const productResponse = await axios.get(
-          `http://localhost:3000/api/product/get/${id}`
+            `${import.meta.env.VITE_API_URL}/api/product/get/${id}`
         );
         setProduct(productResponse.data);
 
         // Fetch all products
         const allProductsResponse = await axios.get(
-          "http://localhost:3000/api/product/getAll"
+            `${import.meta.env.VITE_API_URL}/api/product/getAll`
         );
         setAllProducts(allProductsResponse.data);
       } catch (err) {
@@ -43,7 +43,7 @@ const ProductView = () => {
     
           try {
             const response = await axios.get(
-              `http://localhost:3000/api/user/${userData._id}`
+                `${import.meta.env.VITE_API_URL}/api/user/${userData._id}`
             );
             setLikedItems(response.data.likedItems || []);
           } catch (error) {
@@ -71,7 +71,7 @@ const ProductView = () => {
     }
 
     try {
-      await axios.post("http://localhost:3000/api/user/cart", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/user/cart`, {
         userId,
         productId: product._id,
         quantity: 1,
@@ -114,7 +114,7 @@ const ProductView = () => {
         <div className="product-image">
           {product.images && product.images.length > 0 ? (
             <img
-              src={`http://localhost:3000/${product.images[0]}`}
+              src={`${import.meta.env.VITE_API_URL}/${product.images[0]}`}
               alt={product.name}
             />
           ) : (

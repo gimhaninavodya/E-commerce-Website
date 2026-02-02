@@ -12,7 +12,7 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
 
   const addToCart = async (product) => {
     try {
-      await axios.post("http://localhost:3000/api/user/cart", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/user/cart`, {
         userId,
         productId: product._id,
         quantity: 1,
@@ -42,7 +42,7 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
       </div>
       <Link to={`/product/${product._id}`} className="product-link">
         <img
-            src={`http://localhost:3000/${product.images[0]}`}
+            src={`${import.meta.env.VITE_API_URL}/${product.images[0]}`}
             alt={product.name}
             className={`image ${isOutOfStock ? "grayscale" : ""}`}
         />
