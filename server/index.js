@@ -35,7 +35,10 @@ const __dirname = path.dirname(__filename);
 
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: "https://lydia-three.vercel.app",
+    credentials: true
+}));
 app.use(express.json());
 app.use(bodyParser.json());
 
