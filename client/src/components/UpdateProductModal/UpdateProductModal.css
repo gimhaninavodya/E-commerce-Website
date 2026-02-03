@@ -46,7 +46,7 @@
 
 .form-control:disabled {
   background-color: #f8f9fa;
-  color: #adb5bd;
+  color: #59646f;
   cursor: not-allowed;
 }
 

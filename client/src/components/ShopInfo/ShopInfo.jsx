@@ -65,42 +65,43 @@ const ShopInfo = () => {
         <div className="shop-image">
           <img src={shop3} alt="shop" />
         </div>
-      
-        <div className="shop-info">
-        {userData && !userData.isSeller ? (
-          <>
-            <h3 className="sellercon">I want to become a seller!</h3>
-            <button
-              className="become-seller-button"
-              onClick={() => navigate("/seller")}
-              disabled={loading}
-            >
-              {loading ? "Processing..." : "Become a Seller"}
-            </button>
 
-            {successMessage && (
-              <div
-                className={`message ${
-                  successMessage.includes("error")
-                    ? "error-message"
-                    : "success-message"
-                }`}
-              >
-                {successMessage}
-              </div>
+        <div className="shop-info">
+            {userData && (userData.isSeller === true || userData.role === "seller") ? (
+                <>
+                    <h3 className="sellercon">
+                        You are a seller! Manage and track your sells now!
+                    </h3>
+                    <button
+                        className="become-seller-button"
+                        onClick={() => navigate("/mysells")}
+                    >
+                        Go to my shop!
+                    </button>
+                </>
+            ) : (
+                <>
+                    <h3 className="sellercon">I want to become a seller!</h3>
+                    <button
+                        className="become-seller-button"
+                        onClick={() => navigate("/seller")}
+                        disabled={loading}
+                    >
+                        {loading ? "Processing..." : "Become a Seller"}
+                    </button>
+                    {successMessage && (
+                        <div
+                            className={`message ${
+                                successMessage.includes("error")
+                                    ? "error-message"
+                                    : "success-message"
+                            }`}
+                        >
+                            {successMessage}
+                        </div>
+                    )}
+                </>
             )}
-          </>
-        ) : (
-          <>
-          <h3 className="sellercon">You are a seller! Manage and track your sells now!</h3>
-            <button
-              className="become-seller-button"
-              onClick={() => navigate("/mysells")}
-            >
-              Go to my shop!
-            </button>
-          </>
-        )}
         </div>
       </div>
     </div>
