@@ -53,6 +53,12 @@ app.use("/api/seller", sellerRoute);
 app.use("/api/analysis", analysisRoute);
 
 
+// UptimeRobot to hit
+app.get("/", (req, res) => {
+    res.status(200).send("Backend is awake!");
+});
+
+
 // Server
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, '0.0.0.0', () => {

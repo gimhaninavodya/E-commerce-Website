@@ -25,6 +25,23 @@
 .feedback-form h6 {
   margin-left: 20px;
 }
+
+.feedback-form .form-control:focus,
+.feedback-form .form-select:focus {
+  border-color: #59646f !important;
+  box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25) !important;
+  outline: 0;
+}
+
+.feedback-form .form-select option:checked {
+  background-color: #59646f !important;
+  color: white;
+}
+
+.product-field:focus {
+  border-color: #59646f !important;
+  box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25) !important;
+}
   
 .servicerate {
   margin-bottom: 1rem;

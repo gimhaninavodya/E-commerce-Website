@@ -31,6 +31,25 @@
   padding-right: 30px;
 }
 
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  border-color: #59646f !important;
+  box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25) !important;
+  outline: 0;
+  color: #495057;
+}
+
+.modal-body .form-select option:checked {
+  background-color: #59646f !important;
+  color: white;
+}
+
+.form-control:disabled {
+  background-color: #f8f9fa;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .modal-body {
     padding-left: 15px !important;

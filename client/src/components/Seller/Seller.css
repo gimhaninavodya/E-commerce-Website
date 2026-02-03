@@ -18,9 +18,14 @@
   
   .Seller-field:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+    border-color: #59646f;
+    box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25);
   }
+
+.Seller-field option:checked {
+  background-color: #59646f !important;
+  color: white;
+}
   
   .seller-form h4 {
     margin-top: 20px;

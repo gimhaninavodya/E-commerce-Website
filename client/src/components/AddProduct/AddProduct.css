@@ -26,6 +26,22 @@
   margin-bottom: 20px;
 }
 
+.product-field:focus {
+  border-color: #59646f !important;
+  box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25) !important;
+  outline: 0;
+}
+
+.product-field option:checked {
+  background-color: #59646f !important;
+  color: white;
+}
+
+.product-field[type="file"]:focus {
+  border-color: #59646f !important;
+  box-shadow: 0 0 0 0.25rem rgba(89, 100, 111, 0.25) !important;
+}
+
 .product-btns {
   margin-Top:40px; 
   display: flex;

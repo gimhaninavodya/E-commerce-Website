@@ -85,7 +85,7 @@ const AddFeedback = () => {
       showConfirmButton: false,
       timer: 2000,
     }).then(() => {
-      window.location.reload();
+      navigate("/reviews");
     });
   };
 
