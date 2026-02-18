@@ -11,6 +11,15 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
   const isOutOfStock = product.stock <= 0;
 
   const addToCart = async (product) => {
+    if (!userId) {
+      await Swal.fire({
+        title: "Sign In Required",
+        text: "Please Sign In to add items to your cart.",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/user/cart`, {
         userId,
@@ -28,17 +37,30 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
     }
   };
 
+  const handleUnauthorizedHeart = (e) => {
+    if (!userId) {
+      e.stopPropagation();
+      Swal.fire({
+        title: "Sign In Required",
+        text: "Please Sign In to favorite this item.",
+        icon: "info",
+      });
+    }
+  };
+
   return (
     <div className="card" style={{ position: "relative" }}>
       {isOutOfStock && <div className="sold-out-badge">Sold Out</div>}
       {/* TOP HEART: Visible on Web, Hidden on Mobile */}
       <div className="heart-button-wrapper desktop-heart">
+        <div onClickCapture={handleUnauthorizedHeart}>
         <HeartButton
             productId={product._id}
             userId={userId}
             isLiked={isLiked}
             onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
         />
+        </div>
       </div>
       <Link to={`/product/${product._id}`} className="product-link">
         <img
@@ -68,12 +90,14 @@ const ProductCard = ({ product, handleAddToCart, userId, likedItems }) => {
           <div className="seller-info-container">
             {/* BOTTOM HEART: Hidden on Web, Visible on Mobile */}
             <div className="mobile-heart-inline">
+              <div onClickCapture={handleUnauthorizedHeart}>
               <HeartButton
                   productId={product._id}
                   userId={userId}
                   isLiked={isLiked}
                   onToggle={(updatedLikes) => console.log("Updated likes:", updatedLikes)}
               />
+              </div>
             </div>
             <div className="seller-info">
               <span className="seller-name">{product.seller?.name || "Seller"}</span>

@@ -62,10 +62,10 @@ const ProductView = () => {
   const addToCart = async (product) => {
     if (!userId) {
       Swal.fire({
-        title: "Error",
-        text: "User ID is missing. Please log in.",
-        icon: "error",
-        showConfirmButton: true,
+        title: "Sign In Required",
+        text: "Please Sign In to add items to your cart.",
+        icon: "info",
+        confirmButtonText: "OK",
       });
       return;
     }
@@ -90,10 +90,10 @@ const ProductView = () => {
   const buyNow = (product) => {
     if (!userId) {
       Swal.fire({
-        title: "Error",
-        text: "User ID is missing. Please log in.",
-        icon: "error",
-        showConfirmButton: true,
+        title: "Sign In Required",
+        text: "Please Sign In to proceed to checkout.",
+        icon: "info",
+        confirmButtonText: "OK",
       });
       return;
     }
