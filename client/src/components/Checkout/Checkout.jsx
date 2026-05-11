@@ -88,9 +88,17 @@ const Checkout = () => {
     try {
       const orderData = {
         ...formData,
+        ...(formData.paymentMethod === "paypal" && {
+          cardNumber: undefined,
+          expiryDate: undefined,
+          cvv: undefined,
+        }),
         cart: singleProduct
-          ? [{ productId: singleProduct._id, quantity: 1 }]
-          : cart,
+            ? [{ productId: singleProduct._id, quantity: 1 }]
+            : cart.map((item) => ({
+              productId: item.productId._id,
+              quantity: item.quantity,
+            })),
         totalPrice,
         date: new Date(),
       };
