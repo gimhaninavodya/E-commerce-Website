@@ -1,6 +1,6 @@
 # 🛍️ Lydia | Full-Stack E-Commerce Platform
 
-Lydia is a modern, high-performance e-commerce platform built using the MERN stack. It empowers users to transition seamlessly between being a shopper and a seller, featuring a robust inventory management system and a sleek user interface.
+Lydia is a modern, high-performance e-commerce platform built using the MERN stack. It empowers users to transition seamlessly between being a shopper and a seller, featuring a robust inventory management system and a sleek user interface. 
 
 
 ## 🚀 Project Links
