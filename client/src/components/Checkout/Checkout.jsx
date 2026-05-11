@@ -345,7 +345,7 @@ const Checkout = () => {
                 
               <Form.Control
                 className="Checkout-field"
-                placeholder="Card Number"
+                placeholder="Card Number (16 digits, no spaces)"
                 id="cardNumber"
                 name="cardNumber"
                 value={formData.cardNumber}
